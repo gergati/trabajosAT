@@ -62,7 +62,7 @@ export const Footer = () => {
                             <h3 className="font-medium text-black">LEGALES</h3>
                             <Link
                                 className="hover:opacity-75 text-gray-900 text-sm hover:underline"
-                                href="/"
+                                href="/terminos"
                             >
                                 Términos y Condiciones
                             </Link>
