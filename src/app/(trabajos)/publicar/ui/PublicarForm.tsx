@@ -111,7 +111,7 @@ export const PublicarForm = () => {
     }
 
     return (
-        <Card className="m-auto w-[90%] md:w-[70%] bg-[#EDF7F5] dark:bg-[#020817]">
+        <Card className="m-auto w-full md:w-[70%] bg-[#EDF7F5] dark:bg-[#020817]">
             <CardHeader>
                 <CardTitle>Busque a su próximo profesional.</CardTitle>
                 <CardDescription>Complete todos los datos para una búsqueda más óptima.</CardDescription>
