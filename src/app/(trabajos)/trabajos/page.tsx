@@ -40,7 +40,7 @@ export default async function TrabajosPage() {
                 worksTemp.map((item: any, index: number) => (
                     <>
                         <div className="absolute z-[29] md:mt-28 mt-36 h-[200px] blur-3xl antialiased bg-gradient-to-br from-sky-600 via-blue-600 to-neutral-500 w-[50%] m-auto rounded-lg"></div>
-                        <Card key={index} className="md:h-[250px] h-[450px] shadow-lg z-[32]">
+                        <Card key={index} className="md:h-[250px] h-[500px] shadow-lg z-[32]">
                             <CardHeader className="flex h-[90px] mb-12 md:mb-0">
                                 <div className="flex md:flex-row flex-col md:justify-between items-start gap-2">
                                     <div className="flex flex-col">

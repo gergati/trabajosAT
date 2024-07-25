@@ -7,7 +7,7 @@ import { BookmarkPlus, Check, ChevronRight, Mail, SendHorizontal } from "lucide-
 export const BentoGridUI = () => {
     return (
         <div>
-            <div className="grid md:grid-cols-3 grid-cols-1 md:grid-flow-col md:grid-rows-3 grid-rows-5 items-center justify-center  gap-3 h-[1700px] md:h-[600px] antialiased bg-[#EAF7F5] dark:bg-[#000817] w-full m-auto rounded-3xl p-2">
+            <div className="grid md:grid-cols-3 grid-cols-1 md:grid-flow-col md:grid-rows-3 grid-rows-5 items-center justify-center  gap-3 h-[1900px] md:h-[600px] antialiased bg-[#EAF7F5] dark:bg-[#000817] w-full m-auto rounded-3xl p-2">
                 {/* Primer cuadrado sm */}
                 <div className="bg-white h-full rounded-3xl md:row-span-2 row-span-1 shadow-2xl">
                     <div className="bg-gray-400 h-10 m-auto w-[70%] mt-6 md:ml-5 items-center flex justify-center rounded-lg">
@@ -44,7 +44,7 @@ export const BentoGridUI = () => {
                         <CardContent className="text-gray-400 text-lg">TrabajosAT hace que la comunidad crezca, podrás enviar cuando quieras un mensaje por whatsapp o por correo para que puedas aplicar al momento a cualquier trabajo que sea de tu interes.</CardContent>
                     </div>
                     <div className="absolute h-[80px] md:w-[40%] w-[60%] bg-[#E2EFED] dark:bg-[#000817] md:left-[450px] md:top-[25px] left-[200px] top-[450px] rounded-full text-center m-auto items-center">
-                        <Button className="md:h-10 mt-5 md:ml-5 md:w-48 md:inline-flex gap-2 bg-[#2ee995] hover:bg-[#1aff98] text-black/50">
+                        <Button className="md:h-10 mt-5 md:ml-5 ml-5 md:w-48 md:inline-flex gap-2 bg-[#2ee995] hover:bg-[#1aff98] text-black/50">
                             <Whatsapp className="size-5" />
                             <p className="dark:text-black text-black">Enviar un whatsapp</p>
                         </Button>
@@ -69,7 +69,7 @@ export const BentoGridUI = () => {
                                     <div className="md:w-[60%] m-5">
                                         <CardTitle className="text-white mt-5">Crea tu cuenta y obtiene tu perfil</CardTitle>
                                         <CardDescription className="mt-2">Para que puedas guardar tus trabajos, escribir directamente por el que resulte interesante o simplemente redescubrir nuevos destinos.</CardDescription>
-                                        <div className="absolute flex md:top-[70px] md:left-28 left-7 top-[140px]">
+                                        <div className="absolute flex md:top-[70px] md:left-28 left-7 top-[185px]">
                                             <div className="md:ml-[340px]">
                                                 <Avatar className="w-10 h-10 border border-gray-400">
                                                     <AvatarFallback className=" bg-pink-600">AD</AvatarFallback>
