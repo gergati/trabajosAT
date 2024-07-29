@@ -4,7 +4,7 @@ import { CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from 
 
 export default function TerminosPage() {
   return (
-    <div className="m-auto w-[90%] md:w-[70%] bg-[#EDF7F5] dark:bg-[#020817]">
+    <div className="m-auto mt-10 md:mt-0 w-[90%] md:w-[70%] bg-[#EDF7F5] dark:bg-[#020817]">
       <div className="min-h-screen md:mt-10">
         <CardHeader>
           <CardTitle>Términos y condiciones</CardTitle>
