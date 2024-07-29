@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { useState } from "react"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { RegisterUser, login } from "@/actions"
-import { Button } from "@/components/ui/button"
-import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { RegisterUser } from "@/actions";
+import { Button } from "@/components/ui/button";
+import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
     Form,
     FormControl,
@@ -13,49 +13,52 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { toast } from "sonner"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Role } from "@prisma/client"
-
-
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { toast } from "sonner";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Role } from "@prisma/client";
 
 const formSchema = z.object({
     username: z.string({ message: "Ingrese un nombre con más de dos carácteres" }).min(2).max(20),
-    password: z.string().min(6, { message: 'La contraseña debe contraseña debe ser superior a 6 caracteres' }).max(20).regex(/[a-zA-Z]/, "La contraseña debe contener al menos una letra").regex(/[0-9]/, "La contraseña debe contener al menos un número"),
+    password: z.string().min(6, { message: 'La contraseña debe ser superior a 6 caracteres' }).max(20).regex(/[a-zA-Z]/, "La contraseña debe contener al menos una letra").regex(/[0-9]/, "La contraseña debe contener al menos un número"),
     email: z.string().email({ message: 'Ingrese su email' }),
     role: z.enum(['user', 'admin'], { message: 'Seleccione para saber cual será su rol' }),
-})
-
+});
 
 export const RegisterForm = () => {
-
-    const [errorMessage, setErrorMessage] = useState('')
+    const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
             username: "",
             email: "",
+            password: "",
+            role: "user", // Asegúrate de tener un valor predeterminado para todos los campos
         },
-    })
+    });
 
-    // 2. Define a submit handler.
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        setErrorMessage('')
-        const { username, email, password, role } = values
-        const userRole = role === 'admin' ? Role.admin : Role.user
-        const resp = await RegisterUser(username, email, password, userRole)
+        setErrorMessage('');
+        setSuccessMessage('');
+        const { username, email, password, role } = values;
+        const userRole = role === 'admin' ? Role.admin : Role.user;
+        const resp = await RegisterUser(username, email, password, userRole);
 
         if (!resp.ok) {
-            setErrorMessage(resp.message)
-            toast.error('No se pudo crear el usuario')
+            setErrorMessage(resp.message);
+            toast.error('No se pudo crear el usuario');
             return;
         }
-        await login(email.toLowerCase(), password)
-        window.location.replace('/')
+
+        setSuccessMessage('Cuenta creada. Por favor verifica tu correo para activar tu cuenta.');
+        toast.success('Cuenta creada. Por favor verifica tu correo para activar tu cuenta.');
+        setTimeout(() => {
+            window.location.replace('/auth/verify-email');
+        }, 3000);
     }
 
     return (
@@ -72,7 +75,7 @@ export const RegisterForm = () => {
                         <FormItem>
                             <FormLabel>Nombre completo</FormLabel>
                             <FormControl>
-                                <Input type="name" placeholder="Jhon Doe" {...field} />
+                                <Input type="text" placeholder="Jhon Doe" {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -139,8 +142,9 @@ export const RegisterForm = () => {
                     )}
                 />
                 <span className="text-red-500">{errorMessage}</span>
+                <span className="text-green-500">{successMessage}</span>
                 <Button className="w-full" type="submit">Crear cuenta</Button>
             </form>
         </Form>
-    )
+    );
 }

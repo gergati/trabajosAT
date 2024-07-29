@@ -3,6 +3,7 @@ import { auth } from "../../../../auth.config";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
 
 
 
@@ -20,10 +21,14 @@ export default async function ProfilePage() {
         <div className="mt-20 relative md:w-[65%] w-[90%] gap-4 min-h-screen m-auto grid md:grid-cols-1">
             <Card>
                 <main className="flex h-full flex-1 flex-col gap-4 bg-muted/40 p-4 md:gap-8 md:p-10">
-                    <div className="mx-auto grid w-full max-w-6xl gap-2">
-                        <h1 className="text-3xl font-semibold">Mi cuenta</h1>
+                    <div className="mx-auto flex w-full max-w-6xl gap-2 items-center">
+                        <h1 className="text-3xl font-semibold">
+                            Mi cuenta
+                        </h1> {
+                            isAdmin ? (<Badge className="bg-[#0e365d]">Admin</Badge>) : (<Badge className="bg-[#0e365d]">Usuario</Badge>)
+                        }
                     </div>
-                    
+
                     <div className="mx-auto grid w-full max-w-6xl items-start gap-6 md:grid-cols-[180px_1fr] lg:grid-cols-[250px_1fr]">
                         <nav
                             className="grid gap-4 text-sm text-muted-foreground" x-chunk="dashboard-04-chunk-0"
@@ -35,8 +40,8 @@ export default async function ProfilePage() {
                                             Mi perfil
                                         </Link>
                                         <Link href="/profile/publicaciones" className="font-semibold ">Mis publicaciones</Link>
-                                        
-                                       
+
+
                                     </>
                                 ) : (
                                     <>
@@ -44,8 +49,8 @@ export default async function ProfilePage() {
                                             Mi perfil
                                         </Link>
                                         <Link href="/profile/trabajos" className="font-semibold ">Mis trabajos</Link>
-                                        
-                                       
+
+
                                     </>
                                 )
                             }

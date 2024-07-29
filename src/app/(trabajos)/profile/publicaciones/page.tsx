@@ -16,10 +16,7 @@ export default async function PublicacionesPage() {
         redirect('/')
     }
     const { id } = session!.user
-
-
-
-    const { ok } = await deletedWorks(id)
+    // const { ok } = await deletedWorks(id)
 
 
     const obtenerWorksById = () => {
@@ -57,7 +54,7 @@ export default async function PublicacionesPage() {
                                         <CardHeader className="flex h-[90px] mb-12 md:mb-0">
                                             <div className="flex md:flex-row flex-col md:justify-between items-start gap-2">
                                                 <div className="flex flex-col">
-                                                    <CardTitle className="text-lg">{item.profesional} p/ nene de 6 años</CardTitle>
+                                                    <CardTitle className="text-lg">A.T p/ nene de 6 años</CardTitle>
                                                     <UserCard
                                                         name={item.name}
                                                         email={item.email}
@@ -74,16 +71,11 @@ export default async function PublicacionesPage() {
                                                             Editar
                                                         </Button>
                                                     </Link>
-                                                    {
-                                                        ok
-                                                            ? (<Button variant='destructive'>
-                                                                Eliminado
-                                                            </Button>)
-                                                            : (<Button variant='destructive'>
-                                                                <Trash2 className="size-4 mr-2" />
-                                                                Eliminar
-                                                            </Button>)
-                                                    }
+                                                    <Button variant='destructive' className="gap-2 flex">
+                                                        <Trash2 className="size-4" />
+                                                        <span>Eliminar</span>
+                                                    </Button>
+
                                                 </div>
 
                                                 {/* <Button id={item.id} variant='destructive'>

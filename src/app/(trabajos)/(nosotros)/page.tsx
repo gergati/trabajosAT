@@ -12,7 +12,7 @@ import { BentoGridUI } from "./ui/BentoGridUI";
 export default function TrabajosPage() {
   return (
     <div className="w-full">
-      <div className="mt-20 w-full md:w-[80%] m-auto">
+      <div className="mt-[144px] w-full md:w-[80%] m-auto">
         <div className="text-center m-auto border-none bg-none ">
           <Header />
         </div>
@@ -23,9 +23,9 @@ export default function TrabajosPage() {
         </div>
 
         <div>
-          <div className="mt-[260px] md:mt-[100px] flex flex-col justify-center mx-10">
-            <CardTitle className="mb-5 text-3xl mt-28 md:mt-8">Completa con tus datos</CardTitle>
-            <CardDescription>Llena nuestro formulario para buscar un profesional a tu medida.</CardDescription>
+          <div className="mt-[230px] md:mt-[20px] flex flex-col justify-center">
+            <CardTitle className=" text-2xl mt-28 md:mt-8">Completa con tus datos</CardTitle>
+            <CardDescription className="text-[14px]">Llena nuestro formulario para buscar un profesional a tu medida.</CardDescription>
           </div>
           <div className="md:left-[400px] md:top-[1460px] left-[100px] top-[270vh] absolute h-[500px] md:h-[300px] blur-3xl antialiased bg-gradient-to-br from-sky-600 via-blue-600 to-neutral-500 w-[20%] m-auto rounded-lg"></div>
           <TrabajosUi />

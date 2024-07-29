@@ -11,20 +11,20 @@ export const Mision = () => {
 
                 <Card className="w-full">
                     <CardHeader>
-                        <CardTitle className={`text-[40px]`} >
+                        <CardTitle className={`text-[26px]`} >
                             El rol del A.T
                         </CardTitle>
                     </CardHeader>
 
-                    <CardContent className="items-center justify-center flex m-auto">
+                    <CardContent className="items-center justify-center flex m-auto text-[16px] leading-7">
                         El Acompañante Terapéutico es un agente de salud formado en conocimientos básicos de Psicopatología y con conceptos generales de Psicología, entrenado para realizar un seguimiento de cuidado y prevención con pacientes crónicos y agudos y acompañarlos en sus diferentes procesos bajo la supervisión de los profesionales que en cada caso llevan adelante el tratamiento.
 
                     </CardContent>
                 </Card>
                 <Card className="w-full">
-                    <CardTitle className="text-center mt-4">Objetivos del A.T</CardTitle>
+                    <CardTitle className="text-center text-[26px] mt-4">Objetivos del A.T</CardTitle>
                     <CardContent className="mt-5">
-                        <ul className="flex flex-col gap-2 m-auto">
+                        <ul className="flex flex-col gap-2 m-auto text-[16px]">
                             <li className="flex gap-2">
                                 <div>
                                     <Check className="text-green-600" />

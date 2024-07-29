@@ -60,10 +60,11 @@ export const Profile = () => {
                     }
 
                     <MenubarSeparator />
-                    <MenubarItem inset onClick={() => logout()}  className="text-white bg-red-700 focus:bg-red-400">
+                    <MenubarItem inset onClick={() => logout()} className="text-white bg-red-700 focus:bg-red-400">
                         <LogOut className="size-4 mr-3" />
                         Salir
                     </MenubarItem>
+
                 </MenubarContent>
             </MenubarMenu>
         </Menubar>

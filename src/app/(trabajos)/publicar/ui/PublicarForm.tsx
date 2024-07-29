@@ -50,7 +50,9 @@ const formSchema = z.object({
     type: z.enum(["Amparo", "Sin amparo", "Amparo en curso"], {
         required_error: "Debe seleccionar el estado de su obra social.",
     }),
-    terms: z.boolean().default(false),
+    terms: z.boolean().refine((val) => val === true, {
+        message: "Debe aceptar los términos"
+    }),
     name2: z.string().min(2).max(30).trim().toLowerCase(),
     age: z.preprocess((val) => Number(val), z.number()
         .min(1, { message: "La edad debe ser mayor que 0" })
@@ -113,8 +115,8 @@ export const PublicarForm = () => {
     return (
         <Card className="m-auto w-full md:w-[70%] bg-[#EDF7F5] dark:bg-[#020817]">
             <CardHeader>
-                <CardTitle>Busque a su próximo profesional.</CardTitle>
-                <CardDescription>Complete todos los datos para una búsqueda más óptima.</CardDescription>
+                <CardTitle className="text-2xl">Busque a su próximo profesional.</CardTitle>
+                <CardDescription className="text-sm">Complete todos los datos para una búsqueda más óptima.</CardDescription>
             </CardHeader>
             <CardContent>
                 <Form {...form}>

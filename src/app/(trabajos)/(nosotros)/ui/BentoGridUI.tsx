@@ -7,7 +7,7 @@ import { BookmarkPlus, Check, ChevronRight, Mail, SendHorizontal } from "lucide-
 export const BentoGridUI = () => {
     return (
         <div>
-            <div className="grid md:grid-cols-3 grid-cols-1 md:grid-flow-col md:grid-rows-3 grid-rows-5 items-center justify-center  gap-3 h-[1900px] md:h-[600px] antialiased bg-[#EAF7F5] dark:bg-[#000817] w-full m-auto rounded-3xl p-2">
+            <div className="grid md:grid-cols-3 grid-cols-1 md:grid-flow-col md:grid-rows-3 grid-rows-5 items-center justify-center gap-3 h-[1900px] md:h-[600px] antialiased bg-[#EAF7F5] dark:bg-[#000817] w-full m-auto rounded-3xl p-2">
                 {/* Primer cuadrado sm */}
                 <div className="bg-white h-full rounded-3xl md:row-span-2 row-span-1 shadow-2xl">
                     <div className="bg-gray-400 h-10 m-auto w-[70%] mt-6 md:ml-5 items-center flex justify-center rounded-lg">
