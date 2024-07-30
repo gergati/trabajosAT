@@ -2,6 +2,7 @@
 
 import { Works } from "@/interfaces";
 import prisma from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 
 export const createWork = async (works: Works, userId: string) => {
@@ -43,6 +44,9 @@ const createWorks = async (works: Works, userId: string) => {
             turno: works.turno
         }
 
+        revalidatePath('/trabajos')
+        revalidatePath('/profile/publicaciones')
+
 
         const newWork = await prisma.work.create({
             data: workToSave
@@ -54,7 +58,6 @@ const createWorks = async (works: Works, userId: string) => {
         }
 
     } catch (error) {
-        console.log(error)
         return {
             ok: false,
             message: 'No se pudo guardar el trabajo'

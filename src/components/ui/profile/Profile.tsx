@@ -3,15 +3,13 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useSession } from "next-auth/react"
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarTrigger } from "../menubar"
-import { LogOut, User, UserCog } from "lucide-react"
+import { LogOut, Trash2, User, UserCog } from "lucide-react"
 import { logout } from "@/actions"
 import Link from "next/link"
 import { obtenerNombre } from "@/utils"
-import { usePathname } from "next/navigation"
-
-
-
-
+import { redirect, usePathname } from "next/navigation"
+import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "../alert-dialog"
+import { Button } from "../button"
 
 
 export const Profile = () => {
@@ -19,7 +17,9 @@ export const Profile = () => {
     const { data: session } = useSession()
     const isAdmin = session?.user.role === 'admin'
     const pathname = usePathname()
-    if (!session?.user) return null
+    if (!session?.user) {
+        redirect('/')
+    }
     const { name } = session?.user
 
 
@@ -58,17 +58,13 @@ export const Profile = () => {
                                 </Link>
                             )
                     }
-
                     <MenubarSeparator />
-                    <MenubarItem inset onClick={() => logout()} className="text-white bg-red-700 focus:bg-red-400">
-                        <LogOut className="size-4 mr-3" />
+                    <MenubarItem inset onClick={() => logout()} className="text-white h-8 bg-red-700 focus:bg-red-400 w-full">
+                        <LogOut className="size-4 mr-4" />
                         Salir
                     </MenubarItem>
-
                 </MenubarContent>
             </MenubarMenu>
         </Menubar>
-
-
     )
 }

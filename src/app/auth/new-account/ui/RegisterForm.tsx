@@ -58,7 +58,7 @@ export const RegisterForm = () => {
         toast.success('Cuenta creada. Por favor verifica tu correo para activar tu cuenta.');
         setTimeout(() => {
             window.location.replace('/auth/verify-email');
-        }, 3000);
+        }, 2000);
     }
 
     return (
@@ -141,8 +141,6 @@ export const RegisterForm = () => {
                         </FormItem>
                     )}
                 />
-                <span className="text-red-500">{errorMessage}</span>
-                <span className="text-green-500">{successMessage}</span>
                 <Button className="w-full" type="submit">Crear cuenta</Button>
             </form>
         </Form>

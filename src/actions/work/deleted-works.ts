@@ -1,14 +1,16 @@
+'use server'
 import prisma from "@/lib/prisma"
+import { revalidatePath } from "next/cache";
 
 export const deletedWorks = async (id: string) => {
     try {
-
         await prisma.work.delete({
             where: { id },
         });
-        return { ok: true }
+        revalidatePath('/trabajos')
+        revalidatePath('/profile/publicaciones')
+        return { ok: true };
     } catch (error) {
-        console.log(error)
         return {
             ok: false,
             message: 'Error al eliminar',

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { UserCard } from "@/components/ui/user-hover-card/UserCard"
 import { MapPin, MapPinned, University, BookOpen, PanelTopOpen, Paperclip, CalendarDays, User, Pencil, Trash2 } from "lucide-react"
 import { Separator } from "@/components/ui/separator"
+import { ButtonDeletedWork } from "@/components"
 
 export default async function PublicacionesPage() {
     const session = await auth()
@@ -16,7 +17,6 @@ export default async function PublicacionesPage() {
         redirect('/')
     }
     const { id } = session!.user
-    // const { ok } = await deletedWorks(id)
 
 
     const obtenerWorksById = () => {
@@ -48,7 +48,11 @@ export default async function PublicacionesPage() {
                             <Link href="/profile/publicaciones" className="font-semibold text-primary">Mis publicaciones</Link>
                         </nav>
                         <div className="grid gap-6">
-                            {
+                            {trabajos.length === 0 ? (
+                                <Card className="h-20">
+                                    <div className="flex items-center md:mt-6 justify-center m-auto text-gray-500 text-sm">No publicaste ningún trabajo.</div>
+                                </Card>
+                            ) : (
                                 trabajos.map((item, index) => (
                                     <Card key={index} className="md:h-[250px] h-[450px] shadow-lg">
                                         <CardHeader className="flex h-[90px] mb-12 md:mb-0">
@@ -71,18 +75,8 @@ export default async function PublicacionesPage() {
                                                             Editar
                                                         </Button>
                                                     </Link>
-                                                    <Button variant='destructive' className="gap-2 flex">
-                                                        <Trash2 className="size-4" />
-                                                        <span>Eliminar</span>
-                                                    </Button>
-
+                                                    <ButtonDeletedWork id={item.id} />
                                                 </div>
-
-                                                {/* <Button id={item.id} variant='destructive'>
-                                                    <Trash2 className="size-4 mr-2" />
-                                                    Eliminar
-                                                </Button> */}
-                                                {/* <ButtonDeletedWork id={item.id} /> */}
                                             </div>
                                         </CardHeader>
                                         <Separator className="w-[95%] m-auto mt-20 md:mt-2 " />
@@ -140,6 +134,7 @@ export default async function PublicacionesPage() {
                                         </CardContent>
                                     </Card>
                                 ))
+                            )
                             }
                         </div>
                     </div>

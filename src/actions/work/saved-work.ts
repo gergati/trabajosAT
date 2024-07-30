@@ -44,7 +44,6 @@ export const savedWork = async (userId: string, workId: string) => {
         };
 
     } catch (error) {
-        console.log('Error al guardar el trabajo:', error);
         return {
             ok: false,
             message: 'No se pudo guardar el trabajo',

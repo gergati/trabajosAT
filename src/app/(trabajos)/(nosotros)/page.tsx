@@ -12,7 +12,7 @@ import { BentoGridUI } from "./ui/BentoGridUI";
 export default function TrabajosPage() {
   return (
     <div className="w-full">
-      <div className="mt-[144px] w-full md:w-[80%] m-auto">
+      <div className="mt-[120px] w-full md:w-[80%] m-auto">
         <div className="text-center m-auto border-none bg-none ">
           <Header />
         </div>

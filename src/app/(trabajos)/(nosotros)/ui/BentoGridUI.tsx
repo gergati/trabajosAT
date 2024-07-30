@@ -7,7 +7,7 @@ import { BookmarkPlus, Check, ChevronRight, Mail, SendHorizontal } from "lucide-
 export const BentoGridUI = () => {
     return (
         <div>
-            <div className="grid md:grid-cols-3 grid-cols-1 md:grid-flow-col md:grid-rows-3 grid-rows-5 items-center justify-center gap-3 h-[1900px] md:h-[600px] antialiased bg-[#EAF7F5] dark:bg-[#000817] w-full m-auto rounded-3xl p-2">
+            <div className="grid md:grid-cols-3 grid-cols-1 md:grid-flow-col md:grid-rows-3 grid-rows-5 items-center justify-center gap-3 h-[2000px] md:h-[600px] antialiased bg-[#EAF7F5] dark:bg-[#000817] w-full m-auto rounded-3xl p-2">
                 {/* Primer cuadrado sm */}
                 <div className="bg-white h-full rounded-3xl md:row-span-2 row-span-1 shadow-2xl">
                     <div className="bg-gray-400 h-10 m-auto w-[70%] mt-6 md:ml-5 items-center flex justify-center rounded-lg">
@@ -32,25 +32,25 @@ export const BentoGridUI = () => {
                 </div>
 
                 {/* Cuadro violeta */}
-                <div className="relative z-[50] bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 h-full row-span-2 md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative z-[50] bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 h-[650px] md:h-full row-span-2 md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden shadow-2xl">
 
-                    <div className="bg-gray-800 h-10 m-auto md:w-[50%] w-[70%] mt-6 md:ml-5 items-center justify-center rounded-lg flex gap-2 text-white">
+                    <div className="bg-gray-800 h-10 m-auto md:w-[50%] w-[90%] sm:w-[70%] mt-6 md:ml-5 items-center justify-center rounded-lg flex gap-2 text-white">
                         <SendHorizontal className="size-6" />
                         <h3 className=" text-center dark:text-white">Comunicación instantanea</h3>
                     </div>
 
-                    <div className="absolute w-[70%] md:left-8 md:top-32">
+                    <div className="absolute w-[90%] md:left-4 md:top-[90px]">
                         <CardTitle className="ml-5 mb-5 mt-5 md:-mt-4">Expande la comunidad y crea lazos</CardTitle>
                         <CardContent className="text-gray-400 text-lg">TrabajosAT hace que la comunidad crezca, podrás enviar cuando quieras un mensaje por whatsapp o por correo para que puedas aplicar al momento a cualquier trabajo que sea de tu interes.</CardContent>
                     </div>
-                    <div className="absolute h-[80px] md:w-[40%] w-[60%] bg-[#E2EFED] dark:bg-[#000817] md:left-[450px] md:top-[25px] left-[200px] top-[450px] rounded-full text-center m-auto items-center">
-                        <Button className="md:h-10 mt-5 md:ml-5 ml-5 md:w-48 md:inline-flex gap-2 bg-[#2ee995] hover:bg-[#1aff98] text-black/50">
-                            <Whatsapp className="size-5" />
+                    <div className="absolute h-[80px] md:w-[40%] w-[60%] bg-[#E2EFED] dark:bg-[#000817] md:left-[450px] md:top-[220px] left-[160px] top-[450px] rounded-full text-center m-auto items-center">
+                        <Button className="md:h-10 mt-5 md:ml-5 ml-7 md:w-48 md:inline-flex gap-2 bg-[#2ee995] hover:bg-[#1aff98] text-black/50">
+                            <Whatsapp className="size-5 " />
                             <p className="dark:text-black text-black">Enviar un whatsapp</p>
                         </Button>
                     </div>
-                    <div className="absolute text-center m-auto items-center h-[80px] md:w-[40%] w-[60%] bg-[#EAF7F5] dark:bg-[#000817] rounded-full md:left-[500px] md:top-[120px] top-[550px] left-[250px]">
-                        <Button className="h-10 gap-2 mt-5 md:inline-flex text-white">
+                    <div className="absolute text-center m-auto items-center h-[80px] md:w-[40%] w-[60%] bg-[#EAF7F5] dark:bg-[#000817] rounded-full md:left-[500px] md:top-[320px] top-[550px] left-[210px]">
+                        <Button className="h-10 gap-2 mt-5 md:ml-5 ml-7 md:inline-flex text-white">
                             <Mail />
                             <p className="dark:text-black text-black">
                                 Enviar un correo
@@ -60,7 +60,7 @@ export const BentoGridUI = () => {
                 </div>
 
                 {/* cuadro negro */}
-                <div className="bg-white h-[80%] md:col-span-3 rounded-3xl row-span-1 shadow-2xl">
+                <div className="bg-white h-[70%] md:h-[90%] md:col-span-3 rounded-3xl row-span-1 shadow-2xl">
                     <div className="grid gap-4 w-full h-full p-1">
                         <div className="relative h-full w-full rounded-3xl bg-slate-950 ">
                             <div className="absolute rounded-3xl bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]">
