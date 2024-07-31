@@ -1,20 +1,32 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Onest } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/components";
 import { Toaster } from 'sonner'
 import { ThemeProvider } from "@/components/ui/theme-provider";
 
-const inter = Inter({ subsets: ["latin"] });
+
 const onest = Onest({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
     template: '%s - Trabajos | AT',
-    default: 'Home - Trabajos | AT'
+    default: 'Home - Trabajos | AT',
   },
   description: "Una página para buscar trabajo en AT",
+  openGraph: {
+    title: 'Home - Trabajos | AT',
+    description: "Una página para buscar trabajo en AT",
+    url: "https://trabajosat.vercel.app",
+    siteName: "TrabajosAT",
+    images: [
+      {
+        url: '/trabajosAT.png',
+        width: 1260,
+        height: 800,
+      }
+    ]
+  }
 };
 export default function RootLayout({
   children,
@@ -31,7 +43,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Provider>{children}</Provider>
-          <Toaster richColors/>
+          <Toaster richColors />
         </ThemeProvider>
       </body>
     </html>
