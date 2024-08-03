@@ -107,7 +107,7 @@ export const PublicarForm = () => {
             console.error("Error al crear el trabajo:", error);
         } finally {
             setLoading(false)
-            // form.reset()
+            form.reset()
         }
 
     }

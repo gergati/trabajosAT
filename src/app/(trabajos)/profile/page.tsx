@@ -20,7 +20,7 @@ export default async function ProfilePage() {
     return (
         <div className="mt-20 relative md:w-[65%] w-[90%] gap-4 min-h-screen m-auto grid md:grid-cols-1">
             <Card>
-                <main className="flex h-full flex-1 flex-col gap-4 bg-muted/40 p-4 md:gap-8 md:p-10">
+                <div className="flex h-full flex-1 flex-col gap-4 bg-muted/40 p-4 md:gap-8 md:p-10">
                     <div className="mx-auto flex w-full max-w-6xl gap-2 items-center">
                         <h1 className="text-3xl font-semibold">
                             Mi cuenta
@@ -29,7 +29,7 @@ export default async function ProfilePage() {
                         }
                     </div>
 
-                    <div className="mx-auto grid w-full max-w-6xl items-start gap-6 md:grid-cols-[180px_1fr] lg:grid-cols-[250px_1fr]">
+                    <div className="mx-auto grid w-full max-w-6xl items-start gap-6 ">
                         <nav
                             className="grid gap-4 text-sm text-muted-foreground" x-chunk="dashboard-04-chunk-0"
                         >
@@ -40,8 +40,6 @@ export default async function ProfilePage() {
                                             Mi perfil
                                         </Link>
                                         <Link href="/profile/publicaciones" className="font-semibold ">Mis publicaciones</Link>
-
-
                                     </>
                                 ) : (
                                     <>
@@ -49,8 +47,6 @@ export default async function ProfilePage() {
                                             Mi perfil
                                         </Link>
                                         <Link href="/profile/trabajos" className="font-semibold ">Mis trabajos</Link>
-
-
                                     </>
                                 )
                             }
@@ -76,7 +72,7 @@ export default async function ProfilePage() {
                             </Card>
                         </div>
                     </div>
-                </main>
+                </div>
             </Card>
         </div>
     );

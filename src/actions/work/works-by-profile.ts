@@ -30,7 +30,8 @@ export const worksByProfile = async (userId: string) => {
                 phone: true,
                 profesional: true,
                 type: true,
-                userId: true
+                userId: true,
+                turno: true
             }
         });
 

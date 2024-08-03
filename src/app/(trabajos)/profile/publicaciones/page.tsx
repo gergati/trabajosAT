@@ -38,7 +38,7 @@ export default async function PublicacionesPage() {
                     <div className="mx-auto grid w-full max-w-6xl gap-2">
                         <h1 className="text-3xl font-semibold">Mis publicaciones</h1>
                     </div>
-                    <div className="mx-auto grid w-full max-w-6xl items-start gap-6 md:grid-cols-[180px_1fr]">
+                    <div className="mx-auto grid w-full max-w-6xl items-start gap-6">
                         <nav
                             className="grid gap-4 text-sm text-muted-foreground"
                         >
@@ -64,11 +64,8 @@ export default async function PublicacionesPage() {
                                                         email={item.email}
                                                     />
                                                     <CardDescription className="text-xs">{item.createdAt ? new Date(item.createdAt).toLocaleDateString() : ''}</CardDescription>
-
                                                 </div>
-
                                                 <div className="grid grid-cols-2">
-
                                                     <Link href='/publicar/editar' {...item}>
                                                         <Button variant='secondary'>
                                                             <Pencil className="size-4 mr-2" />
@@ -86,16 +83,16 @@ export default async function PublicacionesPage() {
                                                     <CardTitle className="text-lg">Lugar de Trabajo</CardTitle>
                                                     <div className="gap-2 items-center flex">
                                                         <MapPin size='20px' />
-                                                        <p>{item.ciudad}</p>
+                                                        <p>Ciudad: {item.ciudad}</p>
                                                     </div>
                                                     <div className="gap-2 flex items-center">
                                                         <MapPinned size='20px' />
-                                                        <p>{item.domicilioLaboral}</p>
+                                                        <p>Domicilio: {item.domicilioLaboral} | {item.turno}</p>
                                                     </div>
-                                                    <div className="gap-2 flex items-center">
+                                                    {/* <div className="gap-2 flex items-center">
                                                         <University size='20px' />
                                                         <p>{item.lugarTrabajo}</p>
-                                                    </div>
+                                                    </div> */}
                                                 </div>
                                             </Card>
                                             <Card className="flex mt-6 md:mt-0 md:h-28 flex-col w-full text-sm">
@@ -105,25 +102,25 @@ export default async function PublicacionesPage() {
                                                         <div className="w-full">
                                                             <div className="gap-2 flex">
                                                                 <BookOpen size='20px' />
-                                                                <p>{item.diagnostico}</p>
+                                                                <p>Diagnostico: {item.diagnostico}</p>
                                                             </div>
                                                             <div className="gap-2 flex">
                                                                 <PanelTopOpen size='20px' />
-                                                                <p>{item.obraSocial}</p>
+                                                                <p>Obra social: {item.obraSocial} | {item.type}</p>
                                                             </div>
-                                                            <div className="gap-2 flex">
+                                                            {/* <div className="gap-2 flex">
                                                                 <Paperclip size='20px' />
                                                                 <p>{item.type}</p>
-                                                            </div>
+                                                            </div> */}
                                                         </div>
                                                         <div className="w-full">
                                                             <div className="gap-2 flex">
                                                                 <User size='20px' />
-                                                                <p>{item.name2}</p>
+                                                                <p>Nombre: {item.name2}</p>
                                                             </div>
                                                             <div className="gap-2 flex">
                                                                 <CalendarDays size='20px' />
-                                                                <p>{item.age} años</p>
+                                                                <p>Edad: {item.age} años</p>
                                                             </div>
                                                         </div>
                                                     </div>

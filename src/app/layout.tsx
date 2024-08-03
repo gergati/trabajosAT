@@ -13,11 +13,14 @@ export const metadata: Metadata = {
     template: '%s - Trabajos | AT',
     default: 'Home - Trabajos | AT',
   },
+  metadataBase: new URL('https://trabajosat.vercel.app/'),
   description: "Una página para buscar trabajo en AT",
   openGraph: {
     title: 'Home - Trabajos | AT',
     description: "Una página para buscar trabajo en AT",
-    url: "https://trabajosat.vercel.app",
+    type: 'website',
+    locale: 'es_ES',
+    url: "https://trabajosat.vercel.app/",
     siteName: "TrabajosAT",
     images: [
       {

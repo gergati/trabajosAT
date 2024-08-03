@@ -1,11 +1,12 @@
-import { worksByProfile, worksSavedList } from "@/actions";
+import { savedWork, worksByProfile, worksSavedList } from "@/actions";
 import { auth } from "../../../../../auth.config";
 import { redirect } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
-import { BookmarkPlus, BookOpen, CalendarDays, Mail, MapPin, MapPinned, PanelTopOpen, Paperclip, Send, University, User } from "lucide-react";
+import { BookmarkPlus, BookOpen, CalendarDays, Heart, Mail, MapPin, MapPinned, PanelTopOpen, Paperclip, Send, University, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { ButtonDeleteSaved, ButtonStore } from "@/components";
 
 
 export default async function TrabajosPage() {
@@ -13,10 +14,11 @@ export default async function TrabajosPage() {
     if (!session) {
         redirect('/auth/login')
     }
-    const { id } = session!.user;
-    const totalWorks = await worksByProfile(id)
+    const { id: sessionId } = session!.user;
+    // console.log({ id })
+    const totalWorks = await worksByProfile(sessionId)
 
-    console.log({ totalWorks })
+    // console.log({ list })
 
     return (
         <div className="mt-20 md:w-[65%] w-[90%] gap-4 min-h-screen m-auto grid md:grid-cols-1">
@@ -25,7 +27,7 @@ export default async function TrabajosPage() {
                     <div className="mx-auto grid w-full max-w-6xl gap-2">
                         <h1 className="text-3xl font-semibold">Mis trabajos</h1>
                     </div>
-                    <div className="mx-auto grid w-full max-w-6xl items-start gap-6 md:grid-cols-[180px_1fr] lg:grid-cols-[250px_1fr]">
+                    <div className="mx-auto grid w-full max-w-6xl items-start gap-6">
                         <nav className="grid gap-4 text-sm text-muted-foreground">
                             <Link href="/profile">Mi perfil</Link>
                             <Link href="/profile/trabajos" className="font-semibold text-primary">Mis trabajos</Link>
@@ -51,6 +53,17 @@ export default async function TrabajosPage() {
                                                     <Button className="h-10 gap-2 hidden md:inline-flex">
                                                         <Mail /> Enviar un correo
                                                     </Button>
+                                                    {/* <Button variant={'ghost'}>
+                                                        <Heart className=""/>
+                                                        
+                                                    </Button> */}
+                                                    {/* <ButtonStore {...item} /> */}
+                                                    <div className="hidden md:inline-flex">
+                                                        <ButtonDeleteSaved
+                                                            userId={sessionId}
+                                                            workId={item?.id}
+                                                        />
+                                                    </div>
 
                                                 </div>
                                                 <div className="md:hidden flex flex-row gap-4 mt-2 ">
@@ -60,9 +73,15 @@ export default async function TrabajosPage() {
                                                     <Button>
                                                         <Mail className="md:hidden " />
                                                     </Button>
-                                                    <Button variant='secondary'>
+                                                    {/* <Button variant='secondary'>
                                                         <BookmarkPlus className="md:hidden" />
-                                                    </Button>
+                                                    </Button> */}
+                                                    <div className="md:hidden">
+                                                        <ButtonDeleteSaved
+                                                            userId={sessionId}
+                                                            workId={item?.id}
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </CardHeader>
@@ -73,15 +92,15 @@ export default async function TrabajosPage() {
                                                     <CardTitle className="text-lg">Lugar de Trabajo</CardTitle>
                                                     <div className="gap-2 items-center flex">
                                                         <MapPin size='20px' />
-                                                        <p>{item.ciudad}</p>
+                                                        <p>Ciudad: {item.ciudad}</p>
                                                     </div>
                                                     <div className="gap-2 flex items-center">
                                                         <MapPinned size='20px' />
-                                                        <p>{item.domicilioLaboral}</p>
+                                                        <p>Domicilio: {item.domicilioLaboral}</p>
                                                     </div>
                                                     <div className="gap-2 flex items-center">
                                                         <University size='20px' />
-                                                        <p>{item.lugarTrabajo}</p>
+                                                        <p>Lugar de trabajo: {item.lugarTrabajo} | {item.turno}</p>
                                                     </div>
                                                 </div>
                                             </Card>
@@ -92,25 +111,25 @@ export default async function TrabajosPage() {
                                                         <div className="w-full">
                                                             <div className="gap-2 flex">
                                                                 <BookOpen size='20px' />
-                                                                <p>{item.diagnostico}</p>
+                                                                <p>Diagnostico: {item.diagnostico}</p>
                                                             </div>
                                                             <div className="gap-2 flex">
                                                                 <PanelTopOpen size='20px' />
-                                                                <p>{item.obraSocial}</p>
+                                                                <p>Obra social: {item.obraSocial} | {item.turno}</p>
                                                             </div>
-                                                            <div className="gap-2 flex">
+                                                            {/* <div className="gap-2 flex">
                                                                 <Paperclip size='20px' />
                                                                 <p>{item.type}</p>
-                                                            </div>
+                                                            </div> */}
                                                         </div>
                                                         <div className="w-full">
                                                             <div className="gap-2 flex">
                                                                 <User size='20px' />
-                                                                <p>{item.name2}</p>
+                                                                <p>Nombre: {item.name2}</p>
                                                             </div>
                                                             <div className="gap-2 flex">
                                                                 <CalendarDays size='20px' />
-                                                                <p>{item.age} años</p>
+                                                                <p>Edad: {item.age} años</p>
                                                             </div>
                                                         </div>
                                                     </div>

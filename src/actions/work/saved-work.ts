@@ -1,5 +1,6 @@
 'use server'
 import prisma from "@/lib/prisma";
+import { revalidatePath } from "next/cache";
 
 export const savedWork = async (userId: string, workId: string) => {
     try {
@@ -22,6 +23,9 @@ export const savedWork = async (userId: string, workId: string) => {
                 },
             },
         });
+        revalidatePath('/trabajos')
+        revalidatePath('/profile/publicaciones')
+        revalidatePath('/profile/trabajos')
 
         if (existingSavedWork) {
             return {

@@ -1,6 +1,6 @@
 'use client'
 
-import { BookmarkPlus, Check, Mail } from "lucide-react"
+import { BookmarkPlus, Check, Heart, HeartCrack, Mail } from "lucide-react"
 import { Button } from "../button"
 import { useSession } from "next-auth/react"
 import { useEffect, useState } from "react"
@@ -8,6 +8,9 @@ import Whatsapp from "@/components/icons/Whatsapp"
 import { savedWork } from "@/actions"
 import { toast } from "sonner"
 import { worksByWorksId } from "@/actions/work/works-by-worksid"
+import { useWorkStore } from "@/store/work/work-store"
+import { ButtonDeleteSaved } from "../button-deleted-saved/ButtonDeleteSaved"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../tooltip"
 
 interface Props {
     email: string,
@@ -16,7 +19,9 @@ interface Props {
 }
 
 export const ButtonStore = ({ email, phone, workId }: Props) => {
+    const setWorks = useWorkStore(state => state.setWorks)
     const { data: session } = useSession();
+    const userId = session?.user.id
     const isAdmin = session?.user.role === 'admin'
     const [isSaved, setIsSaved] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
@@ -34,7 +39,6 @@ export const ButtonStore = ({ email, phone, workId }: Props) => {
                 setIsLoading(false);
             }
         };
-
         checkIfSaved();
     }, [session, workId]);
 
@@ -72,18 +76,39 @@ export const ButtonStore = ({ email, phone, workId }: Props) => {
                 </Button>
                 {
                     !isAdmin && (
-                        <Button variant='secondary' onClick={onSaved} className="gap-2 hidden md:inline-flex" disabled={isSaved}>
+                        // <ButtonDeleteSaved userId={userId as string} workId={workId} />
+                        <Button variant='secondary' onClick={onSaved} className="gap-2 hidden md:inline-flex" >
                             {isSaved
                                 ? (
                                     <>
-                                        Guardado
-                                        <Check />
+                                        {/* Guardado
+                                        <Check /> */}
+                                        <TooltipProvider>
+                                            <Tooltip>
+                                                <TooltipTrigger asChild>
+                                                    <Heart className="text-black fill-red-500 transition-all" />
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                    <p>No guardar</p>
+                                                </TooltipContent>
+                                            </Tooltip>
+                                        </TooltipProvider>
                                     </>
                                 )
                                 : (
                                     <>
-                                        Guardar
-                                        <BookmarkPlus />
+                                        {/* Guardar
+                                        <BookmarkPlus /> */}
+                                        <TooltipProvider>
+                                            <Tooltip>
+                                                <TooltipTrigger asChild>
+                                                    <Heart className="text-black transition-all" />
+                                                </TooltipTrigger>
+                                                <TooltipContent>
+                                                    <p>Guardar</p>
+                                                </TooltipContent>
+                                            </Tooltip>
+                                        </TooltipProvider>
                                     </>
                                 )}
                         </Button>

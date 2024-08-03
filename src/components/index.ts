@@ -7,6 +7,7 @@ export * from './ui/drop-menu/DropMenu'
 export * from './ui/update-dialog/UpdateDialog'
 export * from './ui/button-store/ButtonStore'
 export * from './ui/button-deleted/ButtonDeletedWork'
+export * from './ui/button-deleted-saved/ButtonDeleteSaved'
 
 
 export * from './provider/Provider'
