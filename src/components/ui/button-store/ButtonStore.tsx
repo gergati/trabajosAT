@@ -9,7 +9,6 @@ import { savedWork } from "@/actions"
 import { toast } from "sonner"
 import { worksByWorksId } from "@/actions/work/works-by-worksid"
 import { useWorkStore } from "@/store/work/work-store"
-import { ButtonDeleteSaved } from "../button-deleted-saved/ButtonDeleteSaved"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../tooltip"
 
 interface Props {
@@ -19,7 +18,6 @@ interface Props {
 }
 
 export const ButtonStore = ({ email, phone, workId }: Props) => {
-    const setWorks = useWorkStore(state => state.setWorks)
     const { data: session } = useSession();
     const userId = session?.user.id
     const isAdmin = session?.user.role === 'admin'
