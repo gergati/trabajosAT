@@ -25,7 +25,7 @@ export default async function ProfilePage() {
                         <h1 className="text-3xl font-semibold">
                             Mi cuenta
                         </h1> {
-                            isAdmin ? (<Badge className="bg-[#0084f6] hover:bg-[#0d599b] text-white dark:text-black">Admin</Badge>) : (<Badge className="bg-[#0e365d]">Usuario</Badge>)
+                            isAdmin ? (<Badge className="bg-[#0084f6] hover:bg-[#0d599b] text-black">Admin</Badge>) : (<Badge className="bg-[#0084f6] hover:bg-[#0d599b] text-black">Usuario</Badge>)
                         }
                     </div>
 

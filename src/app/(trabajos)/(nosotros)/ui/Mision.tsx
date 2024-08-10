@@ -1,56 +1,74 @@
+'use client'
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check } from "lucide-react";
+import { Interface, UserChat, Users } from "@/lib";
+import { Check, HeartHandshake, ShieldAlert, Speech } from "lucide-react";
 import { Inter } from "next/font/google"
+import Image from "next/image";
+import { useState } from "react";
 
-const inter = Inter({ subsets: ["greek"] });
+
 
 export const Mision = () => {
+    const [scrollMision, setScrollMision] = useState(false)
+
+    const handleScrollMision = () => {
+        if (window.scrollY > 200) {
+            setScrollMision(true)
+        }
+    }
+
     return (
-        <div className="mt-40 absolute z-[39]">
-            <div className="grid md:grid-cols-2 gap-4 grid-cols-1 w-full">
+        <div className="absolute z-[39]">
+            <div className="absolute w-[438px] m-auto md:left-[140px] md:-top-[200px]">
+                <Card className="md:w-[950px] md:h-[500px] items-center m-auto">
+                    <div className="w-full p-1 grid md:grid-cols-2 grid-cols-1 md:p-5">
+                        <Image
+                            src="/unsplash.jpg"
+                            alt="Icon logo trabajosAT"
+                            width={400}
+                            height={400}
+                            className="w-full md:h-[400px] h-[300px] object-cover rounded-lg shadow-sm"
+                        />
+                        <Badge className="h-8 ml-5 absolute rounded-md mt-4 bg-white hover:bg-white text-black shadow-md flex gap-2 w-48">
+                            <Interface />
+                            <span className="text-sm">Cual es el objetivo?</span>
+                        </Badge>
 
-                <Card className="w-full">
-                    <CardHeader>
-                        <CardTitle className={`text-[26px]`} >
-                            El rol del A.T
-                        </CardTitle>
-                    </CardHeader>
+                        <CardContent className="mt-5 w-full grid md:grid-cols-2 md:grid-rows-4 grid-cols-1 gap-2">
 
-                    <CardContent className="items-center justify-center flex m-auto text-[16px] leading-7">
-                        El Acompañante Terapéutico es un agente de salud formado en conocimientos básicos de Psicopatología y con conceptos generales de Psicología, entrenado para realizar un seguimiento de cuidado y prevención con pacientes crónicos y agudos y acompañarlos en sus diferentes procesos bajo la supervisión de los profesionales que en cada caso llevan adelante el tratamiento.
-
-                    </CardContent>
-                </Card>
-                <Card className="w-full">
-                    <CardTitle className="text-center text-[26px] mt-4">Objetivos del A.T</CardTitle>
-                    <CardContent className="mt-5">
-                        <ul className="flex flex-col gap-2 m-auto text-[16px]">
-                            <li className="flex gap-2">
-                                <div>
-                                    <Check className="text-green-600" />
-                                </div>
+                            <Card className="flex gap-2 md:h-16 h-20 items-center md:col-span-2 col-span-1 shadow-md">
+                                <Button variant={'ghost'} className="h-full">
+                                    <HeartHandshake className="text-black" />
+                                </Button>
                                 <p>Favorecer el desarrollo biopsicosocial y/o autovalimiento de la persona asistida.</p>
-                            </li>
-                            <li className="flex gap-2">
-                                <div>
-                                    <Check className="text-green-600" />
-                                </div>
+                            </Card>
+
+                            <Card className="flex gap-2 md:h-16 h-20 md:text-center items-center md:col-span-2 row-start-2 col-span-1 shadow-md">
+                                <Button variant={'ghost'} className="h-full">
+                                    <Users />
+                                </Button>
                                 <p>Fortalecer los vínculos familiares y sociales.</p>
-                            </li>
-                            <li className="flex gap-2">
-                                <div>
-                                    <Check className="text-green-600" />
-                                </div>
-                                <p>Intervenir para facilitar a la persona asistida su integración en el proceso de vida independiente.</p>
-                            </li>
-                            <li className="flex gap-2">
-                                <div>
-                                    <Check className="text-green-600" />
-                                </div>
-                                <p>Estimular la indagación y desarrollo de nuevos modelos de intervención como alternativa a los largos procesos de institucionalización.</p>
-                            </li>
-                        </ul>
-                    </CardContent>
+                            </Card>
+
+                            <Card className="flex gap-2 md:h-20 h-28 md:col-span-2 row-start-3 shadow-md">
+                                <Button variant={'ghost'} className="h-full">
+                                    <Speech className="text-black" />
+                                </Button>
+                                <p className="text-start m-auto">Intervenir para facilitar a la persona asistida su integración en el proceso de vida independiente.</p>
+                            </Card>
+
+                            <Card className="flex gap-2 md:h-24 h-32 md:-ml-20 col-span-2 row-start-4 shadow-md">
+                                <Button variant={'ghost'} className="h-full">
+                                    <UserChat />
+                                </Button>
+                                <p className="text-start m-auto">Estimular la indagación y desarrollo de nuevos modelos de intervención como alternativa a los largos procesos de institucionalización.</p>
+                            </Card>
+
+                        </CardContent>
+                    </div>
+
                 </Card>
             </div>
         </div>

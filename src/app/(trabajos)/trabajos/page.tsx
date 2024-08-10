@@ -56,7 +56,6 @@ export default async function TrabajosPage() {
                                                 <Button variant='success' className="text-black">Loguearse</Button>
                                             </Link>)
                                     }
-                                    {/* <ButtonDeleteSaved userId={userId as string} workId={item.id} /> */}
                                 </div>
                             </CardHeader>
                             <Separator className="w-[95%] m-auto mt-20 md:mt-2 " />

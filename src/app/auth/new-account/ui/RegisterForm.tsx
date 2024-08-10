@@ -9,6 +9,7 @@ import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import {
     Form,
     FormControl,
+    FormDescription,
     FormField,
     FormItem,
     FormLabel,
@@ -19,6 +20,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { toast } from "sonner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Role } from "@prisma/client";
+import Image from "next/image";
+import Link from "next/link";
 
 const formSchema = z.object({
     username: z.string({ message: "Ingrese un nombre con más de dos carácteres" }).min(2).max(20),
@@ -37,7 +40,7 @@ export const RegisterForm = () => {
             username: "",
             email: "",
             password: "",
-            role: "user", // Asegúrate de tener un valor predeterminado para todos los campos
+            role: "user",
         },
     });
 
@@ -49,7 +52,6 @@ export const RegisterForm = () => {
         const resp = await RegisterUser(username, email, password, userRole);
 
         if (!resp.ok) {
-            setErrorMessage(resp.message);
             toast.error('No se pudo crear el usuario');
             return;
         }
@@ -64,10 +66,21 @@ export const RegisterForm = () => {
     return (
         <Form {...form}>
             <CardHeader>
-                <CardTitle>Crear cuenta</CardTitle>
-                <CardDescription>Busque entre cientos de empleos.</CardDescription>
+                <Image
+                    src="/icon/logo-icon.png"
+                    alt="Icon logo trabajosAT"
+                    width={56}
+                    height={56}
+                    className="w-12 h-12 transition-transform duration-300"
+                />
+                <CardTitle className="text-[40px]">Crea una cuenta.</CardTitle>
+                {/* <CardDescription>Busque entre cientos de empleos.</CardDescription> */}
+                <FormDescription className="flex gap-2">
+                    <span className="text-black">Ya tienes una cuenta?</span>
+                    <Link href='/auth/login' className="text-[#003791] hover:text-[#003760]">Ingrese ahora.</Link>
+                </FormDescription>
             </CardHeader>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 p-6">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 p-3">
                 <FormField
                     control={form.control}
                     name="username"

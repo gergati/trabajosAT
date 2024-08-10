@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image";
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -53,9 +54,21 @@ export const LoginForm = () => {
 
     return (
         <Form {...form}>
-            <CardHeader>
-                <CardTitle>Ingresar</CardTitle>
-                <CardDescription>Cientos de empleos a un click de distancia.</CardDescription>
+            <CardHeader className="flex flex-col items-center">
+                    <Image
+                        src="/icon/logo-icon.png"
+                        alt="Icon logo trabajosAT"
+                        width={56}
+                        height={56}
+                        className="w-12 h-12 transition-transform duration-300 ml-2"
+                    />
+                <CardTitle className="text-[40px]">
+                    <span>Bienvenido de nuevo.</span>
+                </CardTitle>
+                <FormDescription className="flex gap-2">
+                    <span className="text-black">Eres nuevo aquí?</span>
+                    <Link href='/auth/new-account' className="text-[#003791] hover:text-[#003760]"> Crear una cuenta.</Link>
+                </FormDescription>
             </CardHeader>
             <form action={dispatch} className="space-y-8 p-6 pt-0">
                 <FormField
@@ -97,10 +110,7 @@ export const LoginForm = () => {
                     )}
                 </div>
                 <LoginButton />
-                <FormDescription className="flex justify-end gap-2">
-                    <span className="">No tenes cuenta?</span>
-                    <Link href='/auth/new-account' className="underline"> Crear una.</Link>
-                </FormDescription>
+
             </form>
         </Form>
     )
@@ -111,7 +121,7 @@ export const LoginForm = () => {
 
         return (
             <Button className="mt-4 text-center w-full bg-gradient-to-r from-sky-400 to-blue-500 dark:from-sky-500 dark:to-blue-600 dark:text-white dark:hover:from-sky-600 dark:hover:to-blue-700" aria-disabled={pending}>
-                Ingresar <ArrowRightIcon className="ml-2 h-5 w-5 text-gray-50 " />
+                Ingresar <ArrowRightIcon className="ml-2 h-5 w-5 text-gray-50" />
             </Button>
         );
     }

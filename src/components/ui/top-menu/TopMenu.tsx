@@ -6,37 +6,58 @@ import { useSession } from 'next-auth/react'
 import { Profile } from "../profile/Profile";
 import { Button } from "../button";
 import { OpenMenu } from "../open-menu/OpenMenu";
-import { DropMenu } from "../drop-menu/DropMenu";
 import { usePathname } from "next/navigation";
-import { BriefcaseBusiness, Flame, Home } from "lucide-react";
+import { useEffect, useState } from "react";
 
 
 export const TopMenu = () => {
 
+  const [scrollNavbar, setScrollNavbar] = useState(false)
   const { data: session } = useSession()
   const isAuthenticated = !!session?.user
   const isAdmin = session?.user.role === 'admin'
   const pathname = usePathname()
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 400) {
+        setScrollNavbar(true);
+      } else {
+        setScrollNavbar(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
-    <nav className="w-[90%] md:w-[70%] z-[99] h-[60px] relative bg-transparent backdrop-blur-xl border border-gray-800/50 dark:border-gray-400 md:px-2 px-4  rounded-full m-auto">
+    <nav className={`w-[90%] z-[99] h-[55px] relative border border-[#FFFFFF] bg-[#F7F5FF] rounded-lg m-auto ${scrollNavbar ? 'md:w-[50%]' : 'md:w-[50%]'}`}>
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center bg-[#F7F5FF] rounded-lg">
         <div>
-          <Link
-            href="/"
-            className=""
-          >
-            <div className="flex">
-              <Image src={"/icon/logo-icon.png"} alt="Icon logo trabajosAT" width={56} height={56} className="w-14 h-14"/>
-              <span className=" dark:text-black self-center text-2xl font-semibold whitespace-nowrap hidden md:block">
+          <Link href="/" className="">
+            <div className="flex items-center">
+              <Image
+                src="/icon/logo-icon.png"
+                alt="Icon logo trabajosAT"
+                width={56}
+                height={56}
+                className="w-12 h-12 transition-transform duration-300 ml-2"
+              />
+              <span
+                className={`transition-all transform duration-300 ${scrollNavbar ? 'transform -translate-x-10 opacity-0' : 'transform translate-x-0 opacity-100'
+                  } dark:text-black text-lg font-semibold whitespace-nowrap hidden md:block`}
+              >
                 TrabajosAT
               </span>
             </div>
-
           </Link>
         </div>
+        <div className={`transition-all transform duration-300 h-[50%] m-auto w-[1px] bg-[#b9b8bf] absolute ${scrollNavbar ? 'md:left-[100px] md:-translate-x-10 translate-x-20' : 'md:left-[200px] md:translate-x-0 translate-x-20'}`}></div>
 
         <div className="flex items-center">
           <span
@@ -45,35 +66,34 @@ export const TopMenu = () => {
           >
             <OpenMenu />
 
-            <DropMenu />
+            {/* <DropMenu /> */}
           </span>
         </div>
 
         <div className="w-full md:inline-flex md:w-auto hidden">
-          <ul className="flex transition-all flex-col items-center justify-center mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+          <ul className="flex transition-all flex-col items-center justify-center md:flex-row md:space-x-8 md:text-sm md:font-medium">
             <li>
               <Button className="dark:hover:bg-[hsla(0,0%,93%,0.72)]" variant='ghost'>
                 <Link
                   aria-current="page"
-                  className={`flex items-center gap-2 justify-center py-2 pr-4 text-lg pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 ${pathname === '/' ? 'text-blue-400' : 'dark:text-white'}`}
+                  className={`flex justify-center items-center gap-2 py-2 pr-4 pl-3 border-b text-sm border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/' ? 'text-[#003791]' : 'dark:text-white'}`}
                   href='/'
                 >
-                  <Home className="size-6" />
-                  Nosotros
+                  <span>Nosotros</span>
                 </Link>
+
               </Button>
             </li>
             <li>
               <Button className="dark:hover:bg-[hsla(0,0%,93%,0.72)]" variant='ghost'>
                 <Link
-                  aria-current="page"
-                  className={`flex justify-center gap-2 py-2 pr-4 pl-3 border-b text-lg border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 ${pathname === '/trabajos' ? 'text-blue-400' : 'dark:text-white'}`}
+                  className={`flex justify-center items-center gap-2 py-2 pr-4 pl-3 border-b text-sm border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/trabajos' ? 'text-[#003791]' : 'dark:text-white'}`}
                   href='/trabajos'
                 >
-                  <BriefcaseBusiness />
-                  Trabajos
+                  <span>Trabajos</span>
                 </Link>
               </Button>
+
             </li>
             {
               isAdmin && (
@@ -83,10 +103,9 @@ export const TopMenu = () => {
                     <Button className="dark:hover:bg-[hsla(0,0%,93%,0.72)]" variant='ghost'>
                       <Link
                         aria-current="page"
-                        className={`flex justify-center gap-2 text-lg py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0 ${pathname === '/publicar' ? 'text-blue-400' : 'dark:text-white'}`}
+                        className={`flex justify-center gap-2 text-sm py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/publicar' ? 'text-[#003791]' : 'dark:text-white'}`}
                         href='/publicar'
                       >
-                        <Flame />
                         Publicar
                       </Link>
                     </Button>
@@ -105,22 +124,33 @@ export const TopMenu = () => {
             <li>
               {
                 !isAuthenticated && (
-                  <Button className=" bg-gradient-to-r from-sky-400 to-blue-500" variant='ghost'>
-                    <Link
-                      aria-current="page"
-                      className="flex uppercase justify-center gap-2 py-2 pr-4 text-sm pl-3 dark:text-white text-black hover:text-gray-800 border-b border-gray-100 md:border-0 "
-                      href='/auth/login'
+                  <div className="flex">
+                    <Button className="mr-2" variant={'ghost'}>
+                      <Link
+                        aria-current="page"
+                        className={`flex leading-5 justify-center gap-2 py-2 pr-4 text-sm pl-3`}
+                        href='/auth/login'>
+                        Iniciar sesión
+                      </Link>
+                    </Button>
+                    <span
+                      className={`transition-all transform duration-300 border mr-5 border-[#f4f1fb] shadow-sm text-[#003791] rounded-lg ${scrollNavbar ? 'transform md:inline-block translate-x-0' : 'transform md:hidden translate-x-10 '}`}
                     >
-                      Ingresar
-                    </Link>
-                  </Button>
+                      <Link
+                        aria-current="page"
+                        className={`flex leading-5 justify-center gap-2 py-2 pr-4 text-sm pl-3`}
+                        href='/auth/new-account'>
+                        Registrate
+                      </Link>
+                    </span>
+                  </div>
                 )
               }
             </li>
 
-            <div>
+            {/* <div>
               <DropMenu />
-            </div>
+            </div> */}
           </ul>
         </div>
       </div>

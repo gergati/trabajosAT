@@ -53,7 +53,7 @@ export const ButtonDeleteSaved = ({ userId, workId }: Props) => {
                         <TooltipProvider>
                             <Tooltip>
                                 <TooltipTrigger asChild>
-                                    <HeartCrack className="text-black fill-red-500 transition-all" />
+                                    <HeartCrack className="text-black fill-red-500 transition-all hover:size-7" />
                                 </TooltipTrigger>
                                 <TooltipContent>
                                     <p>No guardar</p>

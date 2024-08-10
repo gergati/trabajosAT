@@ -100,7 +100,7 @@ export const ButtonStore = ({ email, phone, workId }: Props) => {
                                         <TooltipProvider>
                                             <Tooltip>
                                                 <TooltipTrigger asChild>
-                                                    <Heart className="text-black transition-all" />
+                                                    <Heart className="text-black transition-all hover:text-red-500 hover:fill-red-500 hover:size-7" />
                                                 </TooltipTrigger>
                                                 <TooltipContent>
                                                     <p>Guardar</p>

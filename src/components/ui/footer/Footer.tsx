@@ -7,7 +7,7 @@ import Link from "next/link"
 
 export const Footer = () => {
     return (
-        <footer className="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 dark:from-sky-500 dark:to-blue-600 w-full mt-20">
+        <footer className="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 dark:from-sky-500 dark:to-blue-600 w-full md:mt-20 mt-[300px]">
             <div className="max-w-screen-xl w-[70%] md:w-[100%] items-center justify-center m-auto h-[500px] md:h-[280px] ">
                 <div className="grid md:grid-cols-2 grid-cols-1 w-full md:w-[90%] h-full md:m-auto">
                     <div className="mt-14">

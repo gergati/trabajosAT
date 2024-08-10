@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import {
     CardContent,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
@@ -10,20 +9,21 @@ import Link from "next/link";
 export const Header = () => {
 
     return (
-        <div className="border-none w-full bg-[#EDF7F5] dark:bg-[#020817]">
+        <div className="text-center items-center ">
             <CardHeader>
-                <CardTitle className="text-[45px] md:text-[83px] leading-[84px] m-auto md:w-[80%]">El <span className="bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">portal</span> donde encontras tu empleo</CardTitle>
+                <CardTitle className="text-[45px] md:mt-32 pt-32 md:pt-0 text-[#003791] md:text-[64px] leading-[64px] m-auto md:w-[50%]">El <span className="text-[#003791] dark:text-[#E9F6F5]">portal</span> donde encontras tu empleo</CardTitle>
             </CardHeader>
             <CardContent>
-                <p className="text-[18px]">Hecho por Acompañantes Terapeuticos.</p>
+                <p className="text-[16px] md:w-[40%] m-auto text-[#0045d7]">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit nemo magnam delectus numquam vero deserunt quo! Dolorem neque modi.</p>
             </CardContent>
             <div className="h-10 md:mt-0 mt-5 flex  gap-2 justify-center">
                 <Link href={'/trabajos'}>
-                    <Button className="w-[200px]">
-                        Ver trabajos</Button>
+                    <Button className="w-[200px] bg-[#003791] hover:bg-[#0054ff]">
+                        Ver trabajos
+                    </Button>
                 </Link>
                 <Link href={'/auth/new-account'}>
-                    <Button variant={'ghost'} className="border hover:text-[#0868c5] dark:bg-transparent hover:border-[#0868c5]">Crear cuenta</Button>
+                    <Button variant={'ghost'} className="border hover:text-[#003791] hover:bg-transparent hover:border-[#003791]">Crear cuenta</Button>
                 </Link>
             </div>
         </div>

@@ -25,8 +25,8 @@ export const OpenMenu = () => {
             <DrawerTrigger>
                 <ListMinus className="text-black" />
             </DrawerTrigger>
-            <DrawerContent>
-                <DrawerHeader className="flex gap-4 justify-between">
+            <DrawerContent className="w-[calc(100%-5%)] m-auto">
+                <DrawerHeader className="flex gap-4 justify-between ">
                     <div className="flex flex-col items-start">
                         <DrawerTitle className="text-xl">TrabajosAT</DrawerTitle>
                         <DrawerDescription>Empleos para acompañantes terapeuticos.</DrawerDescription>
