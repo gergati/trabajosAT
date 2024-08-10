@@ -50,7 +50,7 @@ export const TopMenu = () => {
               />
               <span
                 className={`transition-all transform duration-300 ${scrollNavbar ? 'transform -translate-x-10 opacity-0' : 'transform translate-x-0 opacity-100'
-                  } dark:text-black text-lg font-semibold whitespace-nowrap hidden md:block`}
+                  } text-lg font-semibold whitespace-nowrap hidden md:block`}
               >
                 TrabajosAT
               </span>
@@ -73,10 +73,10 @@ export const TopMenu = () => {
         <div className="w-full md:inline-flex md:w-auto hidden">
           <ul className="flex transition-all flex-col items-center justify-center md:flex-row md:space-x-8 md:text-sm md:font-medium">
             <li>
-              <Button className="dark:hover:bg-[hsla(0,0%,93%,0.72)]" variant='ghost'>
+              <Button className="" variant='ghost'>
                 <Link
                   aria-current="page"
-                  className={`flex justify-center items-center gap-2 py-2 pr-4 pl-3 border-b text-sm border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/' ? 'text-[#003791]' : 'dark:text-white'}`}
+                  className={`flex justify-center items-center gap-2 py-2 pr-4 pl-3 border-b text-sm border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/' ? 'text-[#003791]' : 'text-black'}`}
                   href='/'
                 >
                   <span>Nosotros</span>
@@ -85,9 +85,9 @@ export const TopMenu = () => {
               </Button>
             </li>
             <li>
-              <Button className="dark:hover:bg-[hsla(0,0%,93%,0.72)]" variant='ghost'>
+              <Button className="" variant='ghost'>
                 <Link
-                  className={`flex justify-center items-center gap-2 py-2 pr-4 pl-3 border-b text-sm border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/trabajos' ? 'text-[#003791]' : 'dark:text-white'}`}
+                  className={`flex justify-center items-center gap-2 py-2 pr-4 pl-3 border-b text-sm border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/trabajos' ? 'text-[#003791]' : 'text-black'}`}
                   href='/trabajos'
                 >
                   <span>Trabajos</span>
@@ -100,10 +100,10 @@ export const TopMenu = () => {
                 <>
                   <li>
 
-                    <Button className="dark:hover:bg-[hsla(0,0%,93%,0.72)]" variant='ghost'>
+                    <Button className="" variant='ghost'>
                       <Link
                         aria-current="page"
-                        className={`flex justify-center gap-2 text-sm py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/publicar' ? 'text-[#003791]' : 'dark:text-white'}`}
+                        className={`flex justify-center gap-2 text-sm py-2 pr-4 pl-3 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/publicar' ? 'text-[#003791]' : 'text-black'}`}
                         href='/publicar'
                       >
                         Publicar
