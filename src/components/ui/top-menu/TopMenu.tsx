@@ -65,8 +65,6 @@ export const TopMenu = () => {
             id="menu-toggle"
           >
             <OpenMenu />
-
-            {/* <DropMenu /> */}
           </span>
         </div>
 

@@ -10,6 +10,7 @@ import { obtenerNombre } from "@/utils"
 import { redirect, usePathname } from "next/navigation"
 import { AlertDialog, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "../alert-dialog"
 import { Button } from "../button"
+import { Publicaciones, UserGradient } from "@/lib"
 
 
 export const Profile = () => {
@@ -34,26 +35,26 @@ export const Profile = () => {
                 </MenubarTrigger>
                 <MenubarContent className="mt-1">
                     <Link href='/profile' className={`${pathname === '/profile' ? 'text-blue-400' : 'dark:text-white'}`}>
-                        <MenubarItem inset>
-                            <User className="size-5 mr-3" />
-                            Mi cuenta
+                        <MenubarItem inset className="flex gap-2">
+                            <UserGradient />
+                            <span>Mi cuenta</span>
                         </MenubarItem>
                     </Link>
                     <MenubarSeparator />
                     {
                         isAdmin ? (
                             <Link href='/profile/publicaciones' className={`${pathname === '/profile/publicaciones' ? 'text-blue-400' : 'dark:text-white'}`}>
-                                <MenubarItem inset>
-                                    <UserCog className="size-5 mr-3" />
-                                    Publicaciones
+                                <MenubarItem inset className="flex gap-2">
+                                    <Publicaciones />
+                                    <span>Publicaciones</span>
                                 </MenubarItem>
                             </Link>
                         ) :
                             (
                                 <Link href='/profile/trabajos' className={` ${pathname === '/profile/trabajos' ? 'text-blue-400' : 'dark:text-white'}`}>
-                                    <MenubarItem inset>
-                                        <UserCog className="size-5 mr-3" />
-                                        Trabajos
+                                    <MenubarItem inset className="flex gap-2">
+                                        <Publicaciones />
+                                        <span> Trabajos</span>
                                     </MenubarItem>
                                 </Link>
                             )

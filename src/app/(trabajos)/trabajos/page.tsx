@@ -31,7 +31,7 @@ export default async function TrabajosPage() {
     })
 
     return (
-        <div className="relative z-[30] mt-20 min-h-screen grid grid-cols-1 w-[90%] md:w-[70%] m-auto bg-[#EDF7F5] dark:bg-[#020817] gap-3">
+        <div className="relative z-[30] mt-20 min-h-screen grid grid-cols-1 w-[90%] md:w-[70%] m-auto bg-[#EDF7F5] gap-3">
 
             {worksTemp.length === 0 ? (
                 <div className="text-center text-xl font-semibold">
