@@ -10,13 +10,13 @@ export const SectionGradient = () => {
     return (
         <div className="absolute w-full">
             <div className='absolute md:-top-20 z-[45] md:left-[35%] left-0 right-auto m-auto md:w-[400px] md:h-[100px]'>
-                <Badge className="h-8 rounded-md mt-40 md:mt-4 bg-white hover:bg-white text-black shadow-md flex gap-2 w-48">
+                <Badge className="h-8 rounded-md mt-52 md:mt-4 bg-white hover:bg-white text-black shadow-md flex gap-2 w-48">
                     <FlameMainGradient />
                     <span className="text-sm">Beneficios</span>
                 </Badge>
-                <CardTitle className='text-3xl mt-4'>Que te ofrecemos aquí.</CardTitle>
+                <CardTitle className='text-3xl mt-4'>Que te ofrecemos?</CardTitle>
             </div>
-            <div className="absolute z-[39] w-[352px] m-auto md:left-[200px] md:top-[80px] top-[130px]">
+            <div className="absolute z-[39] w-[352px] m-auto md:left-[200px] md:top-[80px] top-[180px]">
                 <div className='md:w-[950px] md:h-[500px] h-[900px] rounded-lg grid grid-cols-1'>
                     <div className='bg-gradient-to-tr from-violet-500 to-orange-300 h-full w-full blur-3xl'></div>
                     <Card className='absolute md:w-[320px] top-28 md:top-0 h-[100px] flex shadow-lg'>

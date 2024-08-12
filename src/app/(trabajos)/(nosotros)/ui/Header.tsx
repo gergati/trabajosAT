@@ -33,8 +33,8 @@ export const Header = () => {
                     Prestadores de servicios de salud.
                 </CardTitle>
             </CardHeader>
-            <div className="md:w-[90%] w-[80%] m-auto text-lg leading-4 text-center md:flex md:justify-center md:items-center grid-cols-2 mb-12">
-                <div className="flex md:inline-flex justify-center items-center gap-2 text-center">
+            <div className="md:w-[90%] w-full m-auto text-lg leading-4 text-center md:flex md:justify-center md:items-center grid-cols-2 mb-12">
+                <div className="flex md:inline-flex justify-center items-center  text-center">
                     <span>Vinculamos</span>
                     <Button className="mx-2 h-8 rounded-md bg-gradient-to-r from-green-500 to-green-700 text-black w-[250px] shadow-md gap-2 relative overflow-hidden">
                         {/* <FlameMainGradient /> */}
