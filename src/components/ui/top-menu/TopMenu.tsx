@@ -1,13 +1,13 @@
 'use client';
 
-import Image from "next/image";
-import Link from "next/link"
+import { useEffect, useState } from "react";
 import { useSession } from 'next-auth/react'
+import { usePathname } from "next/navigation";
+import Link from "next/link"
+import Image from "next/image";
 import { Profile } from "../profile/Profile";
 import { Button } from "../button";
 import { OpenMenu } from "../open-menu/OpenMenu";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 
 
 export const TopMenu = () => {

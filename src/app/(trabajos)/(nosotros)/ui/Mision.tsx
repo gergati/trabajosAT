@@ -20,7 +20,7 @@ export const Mision = () => {
 
     return (
         <div className="absolute z-[39]">
-            <div className="absolute w-[360px] m-auto md:left-[140px] md:-top-[200px]">
+            <div className="absolute w-[352px] m-auto md:left-[140px] md:-top-[200px]">
                 <Card className="md:w-[950px] md:h-[500px] h-[900px] items-center m-auto rounded-lg">
                     <div className="w-full p-1 grid md:grid-cols-2 grid-cols-1 md:p-5">
                         <Image

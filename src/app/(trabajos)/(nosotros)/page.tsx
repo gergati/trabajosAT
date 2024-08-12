@@ -6,6 +6,7 @@ import { Header } from "./ui/Header";
 import { Mision } from "./ui/Mision";
 import { TrabajosUi } from "./ui/TrabajosUi";
 import { BentoGridUI } from "./ui/BentoGridUI";
+import { SectionGradient } from "./ui/SectionGradient";
 
 
 
@@ -22,15 +23,14 @@ export default function TrabajosPage() {
       </div>
 
       {/* <div>
-        <div className="mt-[230px] md:mt-[20px] flex flex-col justify-center">
-          <CardTitle className=" text-2xl mt-28 md:mt-8">Completa con tus datos</CardTitle>
-          <CardDescription className="text-[14px]">Llena nuestro formulario para buscar un profesional a tu medida.</CardDescription>
-        </div>
-        <div className="md:left-[400px] md:top-[1460px] left-[100px] top-[270vh] absolute h-[500px] md:h-[300px] blur-3xl antialiased bg-gradient-to-br from-sky-600 via-blue-600 to-neutral-500 w-[20%] m-auto rounded-lg"></div>
         <TrabajosUi />
+      </div> */}
+
+      <div className="min-h-screen md:w-full w-[90%] m-auto top-[100px]">
+        <SectionGradient />
       </div>
 
-      <div className="mt-52 md:mt-0 w-[90%] m-auto">
+      {/* <div className="mt-52 md:mt-0 w-[90%] m-auto">
         <BentoGridUI />
       </div> */}
     </div>

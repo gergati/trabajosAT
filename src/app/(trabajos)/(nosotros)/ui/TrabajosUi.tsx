@@ -2,8 +2,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const TrabajosUi = () => {
     return (
-        <div className="relative w-full min-h-screen overflow-hidden grid md:grid-cols-2 gap-4 md:mt-[80px] mt-[80px]">
-            <div className="absolute top-[10px] rotate-3 md:rotate-0">
+        <div className="relative w-full h-[400px] md:-top-[240px] overflow-hidden grid md:grid-cols-2 gap-4 md:mt-[2px] mt-[80px]">
+            <div className="absolute top-[100px] rotate-3 md:rotate-0">
                 <Card className="h-20 bg-red-400">
                     <CardContent className="grid justify-center items-center mt-4 dark:text-black">
                         <p className="text-center">Diagnostico: Autismo</p>

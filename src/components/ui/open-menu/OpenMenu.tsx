@@ -1,19 +1,18 @@
 import {
     Drawer,
     DrawerContent,
-    DrawerDescription,
     DrawerHeader,
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer"
-import { ListMinus, LogIn, LogOut, UserRoundPlus } from "lucide-react"
+import { ListMinus, LogOut } from "lucide-react"
 import { Separator } from "../separator"
 import Link from "next/link"
 import { useSession } from "next-auth/react"
 import { Button } from "../button"
 import { logout } from "@/actions"
 import { usePathname } from "next/navigation"
-import { House, Publicar, Throphy, UserGradient, Works } from "@/lib"
+import { CrearCuenta, House, Ingresar, Publicar, Throphy, UserGradient, Works } from "@/lib"
 import { Badge } from "../badge"
 
 export const OpenMenu = () => {
@@ -88,11 +87,11 @@ export const OpenMenu = () => {
                             <>
                                 <Separator />
                                 <div className={`flex gap-2 m-5 hover:text-blue-800 ${pathname === '/auth/login' ? 'text-blue-700' : ''}`}>
-                                    <LogIn />
+                                    <Ingresar />
                                     <Link href='/auth/login'>Ingresar</Link>
                                 </div>
                                 <div className={`flex gap-2 m-5 hover:text-blue-800 ${pathname === '/auth/new-account' ? 'text-blue-700' : ''}`}>
-                                    <UserRoundPlus />
+                                    <CrearCuenta />
                                     <Link href='/auth/new-account'>Crear cuenta</Link>
                                 </div>
                             </>
