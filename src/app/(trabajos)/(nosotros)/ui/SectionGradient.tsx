@@ -9,8 +9,8 @@ import { ArrowMainGradient, FlameMainGradient, MessageMainGradient, SavedMainGra
 export const SectionGradient = () => {
     return (
         <div className="absolute w-full">
-            <div className='absolute md:-top-20 z-[45] md:left-[35%] right-auto m-auto md:w-[400px] md:h-[100px]'>
-                <Badge className="h-8 rounded-md mt-32 md:mt-4 bg-white hover:bg-white text-black shadow-md flex gap-2 w-48">
+            <div className='absolute md:-top-20 z-[45] md:left-[35%] left-0 right-auto m-auto md:w-[400px] md:h-[100px]'>
+                <Badge className="h-8 rounded-md mt-40 md:mt-4 bg-white hover:bg-white text-black shadow-md flex gap-2 w-48">
                     <FlameMainGradient />
                     <span className="text-sm">Beneficios</span>
                 </Badge>
