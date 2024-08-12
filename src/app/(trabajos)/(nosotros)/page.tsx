@@ -1,11 +1,5 @@
-import {
-  CardDescription,
-  CardTitle,
-} from "@/components/ui/card"
 import { Header } from "./ui/Header";
 import { Mision } from "./ui/Mision";
-import { TrabajosUi } from "./ui/TrabajosUi";
-import { BentoGridUI } from "./ui/BentoGridUI";
 import { SectionGradient } from "./ui/SectionGradient";
 
 

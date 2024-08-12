@@ -62,7 +62,7 @@ export const LoginForm = () => {
                         height={56}
                         className="w-12 h-12 transition-transform duration-300 ml-2"
                     />
-                <CardTitle className="text-[40px]">
+                <CardTitle className="md:text-[40px] text-2xl">
                     <span>Bienvenido de nuevo.</span>
                 </CardTitle>
                 <FormDescription className="flex gap-2">

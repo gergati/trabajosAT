@@ -65,7 +65,7 @@ export const RegisterForm = () => {
 
     return (
         <Form {...form}>
-            <CardHeader>
+            <CardHeader className="flex flex-col items-center">
                 <Image
                     src="/icon/logo-icon.png"
                     alt="Icon logo trabajosAT"
@@ -73,8 +73,7 @@ export const RegisterForm = () => {
                     height={56}
                     className="w-12 h-12 transition-transform duration-300"
                 />
-                <CardTitle className="text-[40px]">Crea una cuenta.</CardTitle>
-                {/* <CardDescription>Busque entre cientos de empleos.</CardDescription> */}
+                <CardTitle className="md:text-[40px] text-2xl">Crea una cuenta.</CardTitle>
                 <FormDescription className="flex gap-2">
                     <span className="text-black">Ya tienes una cuenta?</span>
                     <Link href='/auth/login' className="text-[#003791] hover:text-[#003760]">Ingrese ahora.</Link>
