@@ -20,7 +20,7 @@ export const Header = () => {
             setTimeout(() => {
                 setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
                 setIsAnimating(false);
-            }, 4000); // Tiempo para la animación
+            }, 500); // Tiempo para la animación
         }, 4000); // Cambia cada 2 segundos
 
         return () => clearInterval(interval); // Limpiar intervalo al desmontar
