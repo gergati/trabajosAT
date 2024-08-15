@@ -65,7 +65,10 @@ export default async function TrabajosPage() {
                                         <CardTitle className="text-lg">Lugar de Trabajo</CardTitle>
                                         <div className="gap-2 items-center flex">
                                             <MapPin size='20px' />
-                                            <p>Ciudad: {item.ciudad}</p>
+                                            <div className="flex gap-2">
+                                                <p className="text-[#003791]">Ciudad:</p>
+                                                <span> {item.ciudad}</span>
+                                            </div>
                                         </div>
                                         <div className="gap-2 flex items-center">
                                             <MapPinned size='20px' />
@@ -111,7 +114,7 @@ export default async function TrabajosPage() {
                                 <Separator orientation="vertical" className="hidden" />
                             </CardContent>
                         </Card>
-                        <div className="absolute z-[27] ml-[400px] md:mt-58 mt-[400px] h-[200px] blur-3xl antialiased bg-gradient-to-br from-sky-600 via-blue-600 to-neutral-500 w-[50%] m-auto rounded-lg"></div>
+                        {/* <div className="absolute z-[27] ml-[400px] md:mt-58 mt-[400px] h-[200px] blur-3xl antialiased bg-gradient-to-br from-sky-600 via-blue-600 to-neutral-500 w-[50%] m-auto rounded-lg"></div> */}
                     </React.Fragment>
                 ))
             )}

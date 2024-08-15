@@ -35,7 +35,7 @@ export const TopMenu = () => {
 
 
   return (
-    <nav className={`w-[90%] z-[99] h-[55px] relative border border-[#FFFFFF] bg-[#F7F5FF] rounded-lg m-auto ${scrollNavbar ? 'md:w-[50%]' : 'md:w-[50%]'}`}>
+    <nav className={`w-[90%] z-[99] h-[55px] relative border border-[#FFFFFF] bg-[#F7F5FF] rounded-lg m-auto ${scrollNavbar ? 'md:w-[60%]' : 'md:w-[60%]'}`}>
 
       <div className="flex justify-between items-center bg-[#F7F5FF] rounded-lg">
         <div>
@@ -79,7 +79,17 @@ export const TopMenu = () => {
                 >
                   <span>Nosotros</span>
                 </Link>
-
+              </Button>
+            </li>
+            <li>
+              <Button className="" variant='ghost'>
+                <Link
+                  aria-current="page"
+                  className={`flex justify-center items-center gap-2 py-2 pr-4 pl-3 border-b text-sm border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#003791] md:p-0 ${pathname === '/profesionales' ? 'text-[#003791]' : 'text-black'}`}
+                  href='/profesionales'
+                >
+                  <span>Profesionales</span>
+                </Link>
               </Button>
             </li>
             <li>

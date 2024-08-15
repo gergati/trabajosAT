@@ -1,3 +1,4 @@
+import { BentoGridUI } from "./ui/BentoGridUI";
 import { Header } from "./ui/Header";
 import { Mision } from "./ui/Mision";
 import { SectionGradient } from "./ui/SectionGradient";
@@ -24,9 +25,9 @@ export default function TrabajosPage() {
         <SectionGradient />
       </div>
 
-      {/* <div className="mt-52 md:mt-0 w-[90%] m-auto">
+      <div className=" md:mt-0 w-[90%] m-auto mt-[350px]">
         <BentoGridUI />
-      </div> */}
+      </div>
     </div>
   );
 }

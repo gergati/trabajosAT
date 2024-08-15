@@ -13,9 +13,9 @@ export default function TrabajosLayout({
                 </div>
                 <div>
                     {children}
+                    <Footer />
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }
