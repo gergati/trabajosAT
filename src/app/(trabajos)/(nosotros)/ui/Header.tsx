@@ -29,7 +29,7 @@ export const Header = () => {
     return (
         <div className="text-center items-center">
             <CardHeader>
-                <CardTitle className="text-[40px] md:mt-32 pt-32 md:pt-0 text-[#003791] md:text-[64px] md:leading-[64px] m-auto md:w-[50%] w-[110%] text-start md:text-center">
+                <CardTitle className="text-[40px] md:mt-32 pt-32 md:pt-0 text-[#003791] md:text-[64px] md:leading-[64px] m-auto md:w-[50%] w-[80%] md:text-center">
                     Prestadores de servicios de salud.
                 </CardTitle>
             </CardHeader>

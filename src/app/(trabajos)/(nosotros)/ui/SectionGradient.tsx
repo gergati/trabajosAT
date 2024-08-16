@@ -8,7 +8,7 @@ import { ArrowMainGradient, ArrowRotate, Comunnity, FlameMainGradient, MessageMa
 
 export const SectionGradient = () => {
     return (
-        <div className="absolute w-full">
+        <div className="absolute w-[90%]">
             <div className='absolute md:-top-20 z-[45] md:left-[35%] left-0 right-auto m-auto md:w-[400px] md:h-[100px]'>
                 <Badge className="h-8 rounded-md mt-52 md:mt-4 bg-white hover:bg-white text-black shadow-md flex gap-2 w-36">
                     <FlameMainGradient />
@@ -18,7 +18,7 @@ export const SectionGradient = () => {
             </div>
             <div className="absolute z-[39] w-[352px] m-auto md:left-[200px] md:top-[80px] top-[250px]">
                 <div className='md:w-[950px] md:h-[500px] h-[900px] rounded-lg grid grid-cols-1'>
-                    <div className='bg-gradient-to-tr from-violet-500 to-orange-300 h-full w-full blur-3xl'></div>
+                    <div className='bg-gradient-to-tr from-violet-500 to-orange-300 h-full w-full blur-3xl m-auto'></div>
                     <Card className='absolute md:w-[320px] top-28 md:top-0 h-[100px] flex shadow-lg'>
                         <div className='items-center justify-center text-center w-[20%] m-auto ml-2'>
                             <ArrowMainGradient />
