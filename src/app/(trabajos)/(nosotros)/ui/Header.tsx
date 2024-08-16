@@ -29,13 +29,13 @@ export const Header = () => {
     return (
         <div className="text-center items-center">
             <CardHeader>
-                <CardTitle className="text-[40px] md:mt-32 pt-32 md:pt-0 text-[#003791] md:text-[64px] md:leading-[64px] m-auto md:w-[50%] w-[80%] md:text-center">
+                <CardTitle className="text-[52px] md:mt-32 pt-32 md:pt-0 text-[#003791] md:text-[64px] md:leading-[64px] m-auto md:w-[50%] w-[90%] md:text-center leading-10">
                     Prestadores de servicios de salud.
                 </CardTitle>
             </CardHeader>
             <div className="md:w-[90%] w-full m-auto text-lg leading-4 text-center md:flex md:justify-center md:items-center grid-cols-2 mb-12">
-                <div className="flex md:inline-flex justify-center items-center  text-center">
-                    <span>Vinculamos</span>
+                <div className="flex md:inline-flex justify-center items-center text-center">
+                    <span className="text-sm md:text-lg">Vinculamos</span>
                     <Button className="mx-2 h-8 rounded-md bg-gradient-to-r from-green-500 to-green-700 text-black w-[250px] shadow-md gap-2 relative overflow-hidden">
                         {/* <FlameMainGradient /> */}
                         <span
@@ -45,8 +45,8 @@ export const Header = () => {
                         </span>
                     </Button>
                 </div>
-                <div  className="flex md:inline-flex justify-center mt-4 md:mt-0  items-center  text-center">
-                    <span>con</span>
+                <div  className="flex md:inline-flex justify-center mt-2 md:mt-0  items-center  text-center">
+                    <span className="text-sm md:text-lg">con</span>
                     <Button className="mx-2 h-8 rounded-md bg-gradient-to-r from-violet-300 to-violet-400 text-black shadow-md gap-2">
                         {/* <FlameMainGradient /> */}
                         <span className="text-lg">usuarios</span>

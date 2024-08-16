@@ -12,7 +12,7 @@ import { useSession } from "next-auth/react"
 import { Button } from "../button"
 import { logout } from "@/actions"
 import { usePathname } from "next/navigation"
-import { CrearCuenta, House, Ingresar, Publicar, Throphy, UserGradient, Works } from "@/lib"
+import { CrearCuenta, House, Ingresar, Professional, Publicar, Throphy, UserGradient, Works } from "@/lib"
 import { Badge } from "../badge"
 
 export const OpenMenu = () => {
@@ -55,6 +55,10 @@ export const OpenMenu = () => {
                     <div className={`flex gap-2 m-5 hover:text-blue-800 ${pathname === '/trabajos' ? 'text-blue-700' : ''}`}>
                         <Works />
                         <Link href='/trabajos'>Trabajos</Link>
+                    </div>
+                    <div className={`flex gap-2 m-5 hover:text-blue-800 ${pathname === '/trabajos' ? 'text-blue-700' : ''}`}>
+                        <Professional />
+                        <Link href='/profesionales'>Profesionales <Badge>Nuevo!</Badge></Link>
                     </div>
                     {
                         isAuthenticated && (
