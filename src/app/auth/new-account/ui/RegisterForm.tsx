@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { RegisterUser } from "@/actions";
 import { Button } from "@/components/ui/button";
-import { CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardHeader, CardTitle } from "@/components/ui/card";
 import {
     Form,
     FormControl,
@@ -75,7 +75,7 @@ export const RegisterForm = () => {
                 />
                 <CardTitle className="md:text-[40px] text-2xl">Crea una cuenta.</CardTitle>
                 <FormDescription className="flex gap-2">
-                    <span className="text-black">Ya tienes una cuenta?</span>
+                    <span className="text-black">Ya tienes una?</span>
                     <Link href='/auth/login' className="text-[#003791] hover:text-[#003760]">Ingrese ahora.</Link>
                 </FormDescription>
             </CardHeader>

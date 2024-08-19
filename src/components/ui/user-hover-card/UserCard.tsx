@@ -9,9 +9,9 @@ import {
     HoverCardContent,
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
-import { Badge } from "../badge";
 import { obtenerNombre } from "@/utils";
 import { useSession } from "next-auth/react";
+import { Checked } from "@/lib";
 
 interface Props {
     name: string;
@@ -22,6 +22,7 @@ interface Props {
 export const UserCard = ({ name, email, image }: Props) => {
     const session = useSession()
     const init = session.data?.user
+
     return (
         <HoverCard>
             <HoverCardTrigger asChild>
@@ -40,9 +41,9 @@ export const UserCard = ({ name, email, image }: Props) => {
                     <div className="dark:text-white">
                         <h4 className="text-sm font-semibold">{name}</h4>
                         <p className="text-sm">
-                            {
-                                init ? `${email}` : <p className="text-xs text-gray-300 mt-2">No estas logueado...</p>
-                            }
+                                {
+                                    init ? `${email}` : <p className="text-xs text-gray-300 mt-2">No estas logueado...</p>
+                                }
                         </p>
                     </div>
                 </div>

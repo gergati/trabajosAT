@@ -47,7 +47,7 @@ export default async function TrabajosPage() {
                                     <div className="flex flex-col">
                                         <CardTitle className="text-lg">A.T p/ paciente de {item.age} años</CardTitle>
                                         <UserCard name={item.user.name} email={item.user.email} />
-                                        <CardDescription className="text-xs">{item.createdAt ? new Date(item.createdAt).toLocaleDateString() : ''}</CardDescription>
+                                        <CardDescription className="text-xs">{item.createdAt ? new Date(item.createdAt).toLocaleDateString() : ''} </CardDescription>
                                     </div>
                                     {
                                         data
