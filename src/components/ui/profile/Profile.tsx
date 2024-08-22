@@ -3,7 +3,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useSession } from "next-auth/react"
 import { Menubar, MenubarContent, MenubarItem, MenubarMenu, MenubarSeparator, MenubarTrigger } from "../menubar"
-import { LogOut, Trash2, User, UserCog } from "lucide-react"
+import { LogOut, Settings, Trash2, User, User2, UserCog } from "lucide-react"
 import { logout } from "@/actions"
 import Link from "next/link"
 import { obtenerNombre } from "@/utils"
@@ -36,7 +36,8 @@ export const Profile = () => {
                 <MenubarContent className="mt-1">
                     <Link href='/profile' className={`${pathname === '/profile' ? 'text-blue-400' : 'dark:text-white'}`}>
                         <MenubarItem inset className="flex gap-2">
-                            <UserGradient />
+                            {/* <UserGradient /> */}
+                            <User2 size={18}/>
                             <span>Mi cuenta</span>
                         </MenubarItem>
                     </Link>
@@ -45,7 +46,8 @@ export const Profile = () => {
                         isAdmin ? (
                             <Link href='/profile/publicaciones' className={`${pathname === '/profile/publicaciones' ? 'text-blue-400' : 'dark:text-white'}`}>
                                 <MenubarItem inset className="flex gap-2">
-                                    <Publicaciones />
+                                    {/* <Publicaciones /> */}
+                                    <Settings size={18}/>
                                     <span>Publicaciones</span>
                                 </MenubarItem>
                             </Link>
@@ -53,7 +55,8 @@ export const Profile = () => {
                             (
                                 <Link href='/profile/trabajos' className={` ${pathname === '/profile/trabajos' ? 'text-blue-400' : 'dark:text-white'}`}>
                                     <MenubarItem inset className="flex gap-2">
-                                        <Publicaciones />
+                                        {/* <Publicaciones /> */}
+                                        <Settings size={18}/>
                                         <span> Trabajos</span>
                                     </MenubarItem>
                                 </Link>

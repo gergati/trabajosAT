@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react"
 import { Onest } from "next/font/google";
 import "./globals.css";
 import { Provider } from "@/components";
@@ -45,7 +46,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Provider>{children}</Provider>
+          <Provider>
+            {children}
+            <Analytics />
+          </Provider>
           <Toaster richColors />
         </ThemeProvider>
       </body>

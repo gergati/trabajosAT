@@ -75,16 +75,15 @@ export default async function ProfilePage() {
                                 )
                             }
                         </nav>
-                        <div className="grid md:gap-6 gap-2 m-auto">
+                        <div className="grid md:gap-6 gap-2 m-auto w-full">
                             <div className="flex md:flex-row flex-col gap-2">
-
                                 <Card className="shadow-xl w-full">
                                     <CardHeader>
                                         <CardTitle className="md:text-lg text-sm">Nombre completo</CardTitle>
                                         <Separator />
                                     </CardHeader>
                                     <CardContent>
-                                        <CardDescription>{name}</CardDescription>
+                                        <CardDescription className="text-gray-700">{name}</CardDescription>
                                     </CardContent>
                                 </Card>
                                 <Card className="shadow-xl w-full">
@@ -93,66 +92,76 @@ export default async function ProfilePage() {
                                         <Separator />
                                     </CardHeader>
                                     <CardContent>
-                                        <CardDescription>{email}</CardDescription>
+                                        <CardDescription className="text-gray-700">{email}</CardDescription>
                                     </CardContent>
                                 </Card>
                             </div>
-                            <Card className="shadow-xl w-full">
-                                <CardHeader>
-                                    <div className="flex justify-between items-center">
-                                        <CardTitle className="md:text-lg text-sm">Sobre mí</CardTitle>
-                                        <div className="flex gap-2">
-                                            <Button variant={'secondary'}>
-                                                <Pencil size={16} />
-                                            </Button>
-                                        </div>
-                                    </div>
-                                    <Separator />
-                                </CardHeader>
-                                <CardContent>
-                                    <CardDescription>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus molestiae fuga consectetur est numquam, animi provident accusantium, laboriosam suscipit possimus ea quaerat tenetur, non libero aspernatur illo repellat asperiores officia.</CardDescription>
-                                </CardContent>
-                            </Card>
-                            <Card className="shadow-xl w-full">
-                                <CardHeader>
-                                    <div className="flex justify-between items-center">
-                                        <CardTitle className="md:text-lg text-sm">Estudios Universitarios</CardTitle>
-                                        <div className="flex gap-2">
-                                            <Button variant={'secondary'}>
-                                                <Pencil size={16} />
-                                            </Button>
-                                            <Button variant={'secondary'}>
-                                                <CirclePlus size={18} />
-                                            </Button>
-                                        </div>
-                                    </div>
-                                    <Separator />
-                                    <div className="flex gap-2 items-center">
-                                        <Check />
-                                        <span>Universidad Nacional del Sur</span>
-                                    </div>
-                                </CardHeader>
-                            </Card>
-                            <Card className="shadow-xl w-full">
-                                <CardHeader>
-                                    <div className="flex justify-between items-center">
-                                        <CardTitle className="md:text-lg text-sm">Cursos complementarios</CardTitle>
-                                        <div className="flex gap-2">
-                                            <Button variant={'secondary'}>
-                                                <Pencil size={16} />
-                                            </Button>
-                                            <Button variant={'secondary'}>
-                                                <CirclePlus size={18} />
-                                            </Button>
-                                        </div>
-                                    </div>
-                                    <Separator />
-                                    <div className="flex gap-2 items-center">
-                                        <Check />
-                                        <span>Autismo</span>
-                                    </div>
-                                </CardHeader>
-                            </Card>
+                            {
+                                isAdmin
+                                    ? ('')
+                                    : (
+                                        <>
+                                            <Card className="shadow-xl w-full">
+                                                <CardHeader>
+                                                    <div className="flex justify-between items-center">
+                                                        <CardTitle className="md:text-lg text-sm">Sobre mí</CardTitle>
+                                                        <div className="flex gap-2">
+                                                            <Button variant={'secondary'}>
+                                                                <Pencil size={16} />
+                                                            </Button>
+                                                        </div>
+                                                    </div>
+                                                    <Separator />
+                                                </CardHeader>
+                                                <CardContent>
+                                                    <CardDescription className="text-gray-700">Estudie en la universidad del sur, en el año 2022, actualmente estoy buscando trabajo relacionado al autismo.</CardDescription>
+                                                </CardContent>
+                                            </Card>
+                                            <Card className="shadow-xl w-full">
+                                                <CardHeader>
+                                                    <div className="flex justify-between items-center">
+                                                        <CardTitle className="md:text-lg text-sm">Estudios Universitarios</CardTitle>
+                                                        <div className="flex gap-2">
+                                                            <Button variant={'secondary'}>
+                                                                <Pencil size={16} />
+                                                            </Button>
+                                                            <Button variant={'secondary'}>
+                                                                <CirclePlus size={18} />
+                                                            </Button>
+                                                        </div>
+                                                    </div>
+                                                    <Separator />
+                                                    <div className="flex gap-2 items-center">
+                                                        <Check />
+                                                        <span>Universidad Nacional del Sur</span>
+                                                    </div>
+                                                </CardHeader>
+                                            </Card>
+                                            <Card className="shadow-xl w-full">
+                                                <CardHeader>
+                                                    <div className="flex justify-between items-center">
+                                                        <CardTitle className="md:text-lg text-sm">Cursos complementarios</CardTitle>
+                                                        <div className="flex gap-2">
+                                                            <Button variant={'secondary'}>
+                                                                <Pencil size={16} />
+                                                            </Button>
+                                                            <Button variant={'secondary'}>
+                                                                <CirclePlus size={18} />
+                                                            </Button>
+                                                        </div>
+                                                    </div>
+                                                    <Separator />
+                                                    <div className="flex gap-2 items-center">
+                                                        <Check />
+                                                        <span>Autismo</span>
+                                                    </div>
+                                                </CardHeader>
+                                            </Card>
+                                        </>
+
+                                    )
+                            }
+
                         </div>
                     </div>
                 </div>

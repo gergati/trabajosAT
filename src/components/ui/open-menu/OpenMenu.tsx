@@ -56,7 +56,7 @@ export const OpenMenu = () => {
                         <Works />
                         <Link href='/trabajos'>Trabajos</Link>
                     </div>
-                    <div className={`flex gap-2 m-5 hover:text-blue-800 ${pathname === '/trabajos' ? 'text-blue-700' : ''}`}>
+                    <div className={`flex gap-2 m-5 hover:text-blue-800 ${pathname === '/profesionales' ? 'text-blue-700' : ''}`}>
                         <Professional />
                         <Link href='/profesionales'>Profesionales <Badge>Nuevo!</Badge></Link>
                     </div>

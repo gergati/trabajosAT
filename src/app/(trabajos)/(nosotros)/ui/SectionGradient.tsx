@@ -18,7 +18,7 @@ export const SectionGradient = () => {
             </div>
             <div className="absolute z-[39] w-[352px] m-auto md:left-[200px] md:top-[80px] top-[250px]">
                 <div className='md:w-[950px] md:h-[500px] h-[900px] rounded-lg grid grid-cols-1'>
-                    <div className='bg-gradient-to-tr from-violet-500 to-orange-300 h-full w-full blur-3xl m-auto'></div>
+                    <div className='bg-gradient-to-tr from-violet-500 to-orange-300 h-[700px] w-full blur-3xl m-auto'></div>
                     <Card className='absolute md:w-[320px] top-28 md:top-0 h-[100px] flex shadow-lg'>
                         <div className='items-center justify-center text-center w-[20%] m-auto ml-2'>
                             <ArrowMainGradient />
