@@ -1,7 +1,7 @@
-import { BentoGridUI } from "./ui/BentoGridUI";
+import { Pricing } from "./ui/Pricing";
 import { Header } from "./ui/Header";
 import { Mision } from "./ui/Mision";
-import { SectionGradient } from "./ui/SectionGradient";
+import { Beneficios } from "./ui/Beneficios";
 
 
 
@@ -22,11 +22,11 @@ export default function TrabajosPage() {
       </div> */}
 
       <div className="min-h-screen md:w-full w-[90%] m-auto top-[100px]">
-        <SectionGradient />
+        <Beneficios />
       </div>
 
       <div className=" md:mt-0 w-[90%] m-auto mt-[350px]">
-        <BentoGridUI />
+        <Pricing />
       </div>
     </div>
   );
