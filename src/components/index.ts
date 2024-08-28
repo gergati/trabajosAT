@@ -8,6 +8,8 @@ export * from './ui/update-dialog/UpdateDialog'
 export * from './ui/button-store/ButtonStore'
 export * from './ui/button-deleted/ButtonDeletedWork'
 export * from './ui/button-deleted-saved/ButtonDeleteSaved'
+export * from './ui/sidebar/Sidebar'
+export * from './ui/sidebar/SidebarItem'
 
 
 export * from './provider/Provider'

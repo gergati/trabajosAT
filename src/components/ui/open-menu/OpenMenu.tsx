@@ -23,7 +23,7 @@ export const OpenMenu = () => {
 
     return (
         <Drawer>
-            <DrawerTrigger>
+            <DrawerTrigger aria-label="button for menu mobile">
                 <ListMinus className="text-black" />
             </DrawerTrigger>
             <DrawerContent className="w-[calc(100%-5%)] m-auto">

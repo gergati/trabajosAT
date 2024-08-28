@@ -22,13 +22,13 @@ export const Footer = () => {
                             <p className="text-black text-md">Empieza un nuevo trabajo hoy mismo.</p>
                         </div>
                         <div className="flex gap-4 my-5">
-                            <a href="#">
+                            <a href="#" aria-label="Ir a Facebook">
                                 <FacebookIcons />
                             </a>
-                            <a href="#">
+                            <a href="#" aria-label="Ir a Instagram">
                                 <InstagramIcons />
                             </a>
-                            <a href="#">
+                            <a href="#" aria-label="Ir a Twitter">
                                 <TwitterIcon />
                             </a>
                         </div>

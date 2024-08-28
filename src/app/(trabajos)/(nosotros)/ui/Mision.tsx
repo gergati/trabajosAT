@@ -38,30 +38,30 @@ export const Mision = () => {
                         <div className="mt-5 w-full grid md:grid-cols-2 md:grid-rows-4 grid-cols-1 gap-2 md:p-5">
 
                             <Card className="flex gap-2 md:h-16 h-24 items-center md:col-span-2 col-span-1 shadow-md">
-                                <Button variant={'ghost'} className="h-full">
+                                <div className="h-full w-20 mt-3">
                                     <HeartHandshake className="text-black" />
-                                </Button>
+                                </div>
                                 <p>Favorecer el desarrollo biopsicosocial y/o autovalimiento de la persona asistida.</p>
                             </Card>
 
                             <Card className="flex gap-2 md:h-16 h-24 md:text-center items-center md:col-span-2 row-start-2 col-span-1 shadow-md">
-                                <Button variant={'ghost'} className="h-full">
+                                <div  className="h-full">
                                     <Users />
-                                </Button>
+                                </div>
                                 <p>Fortalecer los vínculos familiares y sociales.</p>
                             </Card>
 
                             <Card className="flex gap-2 md:h-20 h-32 md:col-span-2 row-start-3 shadow-md">
-                                <Button variant={'ghost'} className="h-full">
+                                <div className="h-full">
                                     <Speech className="text-black" />
-                                </Button>
+                                </div>
                                 <p className="text-start m-auto">Intervenir para facilitar a la persona asistida su integración en el proceso de vida independiente.</p>
                             </Card>
 
                             <Card className="flex gap-2 md:h-24 h-36 md:-ml-20 col-span-2 row-start-4 shadow-md">
-                                <Button variant={'ghost'} className="h-full">
+                                <div className="h-full">
                                     <UserChat />
-                                </Button>
+                                </div>
                                 <p className="text-start m-auto">Estimular la indagación y desarrollo de nuevos modelos de intervención como alternativa a los largos procesos de institucionalización.</p>
                             </Card>
                         </div>
