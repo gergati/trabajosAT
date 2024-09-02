@@ -13,7 +13,7 @@ export const Beneficios = () => {
                 </Badge>
                 <CardTitle className='text-3xl my-8'>Que te ofrecemos?</CardTitle>
             </div>
-            <div className="absolute z-[39] w-[352px] m-auto md:left-[200px] md:top-[80px] top-[250px]">
+            <div className="absolute z-[39] w-[373px] m-auto md:left-[200px] md:top-[80px] top-[250px]">
                 <div className='md:w-[950px] md:h-[500px] h-[900px] rounded-lg grid grid-cols-1'>
                     <div className='bg-gradient-to-tr from-violet-500 to-orange-300 h-[500px] w-full blur-3xl m-auto'></div>
                     <Card className='absolute md:w-[320px] top-28 md:top-0 h-[100px] flex shadow-lg'>
@@ -23,7 +23,7 @@ export const Beneficios = () => {
                         <Separator orientation='vertical' />
                         <div className='w-full items-start m-auto text-start ml-2'>
                             <CardTitle className='text-lg'>Crecer profesionalmente</CardTitle>
-                            <p className='text-sm leading-4'>Podrás estar actualizado con los nuevos trabajos que salen día a día.</p>
+                            <p className='text-sm leading-4'>Vinculamos profesionales con personas que necesitan un acompañamiento terapéutico.</p>
                         </div>
                     </Card>
 
@@ -33,8 +33,8 @@ export const Beneficios = () => {
                         </div>
                         <Separator orientation='vertical' />
                         <div className='w-full items-start m-auto text-start ml-4'>
-                            <CardTitle className='text-lg'>Guardar todos tus trabajos</CardTitle>
-                            <p className='text-sm leading-4'>No querras perderte ninguno, podrás consultarlo cuando quieras, guardandolos.</p>
+                            <CardTitle className='text-lg'>Guardar.</CardTitle>
+                            <p className='text-sm leading-4'>Si te interesa un anuncio publicado, tenes la posibilidad de guardarlo en tu perfil.</p>
                         </div>
                     </Card>
 
@@ -45,7 +45,7 @@ export const Beneficios = () => {
                         <Separator orientation='vertical' />
                         <div className='w-full items-start m-auto text-start ml-2'>
                             <CardTitle className='text-lg'>Ser más directo.</CardTitle>
-                            <p className='text-sm leading-4'>Sin limitaciones podrás aplicar a cualquier trabajo.</p>
+                            <p className='text-sm leading-4'>Sin limitaciones podrás ofrecer tu servicio profesional de forma más directa.</p>
                         </div>
                     </Card>
 
@@ -56,7 +56,7 @@ export const Beneficios = () => {
                         <Separator orientation='vertical' />
                         <div className='w-full items-start m-auto text-start ml-2'>
                             <CardTitle className='text-lg'>Se parte de una comunidad.</CardTitle>
-                            <p className='text-sm leading-4'>Conecta con profesionales relacionados a tu area que harán que crezcas laboralmente.</p>
+                            <p className='text-sm leading-4'>Conecta con profesionales relacionados a tu area y de otras areas disciplinales que harán que crezcas profesionalmente.</p>
                         </div>
                     </Card>
 

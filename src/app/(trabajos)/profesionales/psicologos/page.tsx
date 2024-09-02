@@ -1,8 +1,14 @@
+import { ProfileProfessional } from "../ui/ProfileProfessional";
 
 export default function PsicologosPage() {
   return (
     <div>
-      <h1>Hello Page</h1>
+      <ProfileProfessional />
+      <ProfileProfessional />
+      <ProfileProfessional />
+      <ProfileProfessional />
+      <ProfileProfessional />
+      <ProfileProfessional />
     </div>
   );
 }

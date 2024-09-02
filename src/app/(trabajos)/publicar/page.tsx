@@ -11,7 +11,6 @@ export default async function TrabajosPage() {
     redirect('/')
   }
   return (
-
     <div className="px-6 py-8">
       <PublicarForm />
     </div>

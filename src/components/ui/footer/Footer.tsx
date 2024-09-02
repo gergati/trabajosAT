@@ -19,7 +19,7 @@ export const Footer = () => {
                                 </div>
                                 <h2 className="text-3xl font-bold text-black">TrabajosAT</h2>
                             </div>
-                            <p className="text-black text-md">Empieza un nuevo trabajo hoy mismo.</p>
+                            <p className="text-black text-sm">Vinculamos acompañantes terapeuticos con usuarios.</p>
                         </div>
                         <div className="flex gap-4 my-5">
                             <a href="#" aria-label="Ir a Facebook">

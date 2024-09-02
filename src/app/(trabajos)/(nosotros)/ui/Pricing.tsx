@@ -35,11 +35,11 @@ export const Pricing = () => {
                                 <span className="text-sm">Plan especial para profesionales</span>
                             </Badge>
                             <h3 className="text-3xl mt-5 font-bold">Conecta con otros profesionales</h3>
-                            <p>Si bien este sitio es exclusivo para acompañantes, entendemos que trabajan codo a codo con otras profesiones, por eso tenemos un plan ideal para vos.</p>
+                            <p>Si bien este sitio es exclusivo para acompañantes, entendemos que trabajan en equipo de manera interdisciplinaria con otros profesionales, por eso tenemos un plan ideal para vos.</p>
                         </div>
                     </div>
 
-                    <Card className="relative w-[96%] md:w-[380px] md:h-[450px] h-[450px] text-center m-auto shadow-2xl">
+                    <Card className="relative w-[96%] md:w-[380px] md:h-[450px] h-[450px] text-center m-auto md:shadow-2xl shadow-md">
                         <div>
                             <div className="absolute md:top-5 top-6 md:left-24 left-16 -rotate-45">
                                 <Crown height={24} width={24} />

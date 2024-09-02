@@ -45,7 +45,7 @@ export default async function TrabajosPage() {
                             <CardHeader className="flex h-[90px] mb-12 md:mb-0">
                                 <div className="flex md:flex-row flex-col md:justify-between items-start gap-2">
                                     <div className="flex flex-col">
-                                        <CardTitle className="text-lg">A.T p/ paciente de {item.age} años</CardTitle>
+                                        <CardTitle className="text-lg">A.T p/ persona con {item.diagnostico}</CardTitle>
                                         <UserCard name={item.user.name} email={item.user.email} />
                                         <CardDescription className="text-xs">{item.createdAt ? new Date(item.createdAt).toLocaleDateString() : ''} </CardDescription>
                                     </div>
@@ -82,7 +82,7 @@ export default async function TrabajosPage() {
                                 </Card>
                                 <Card className="flex mt-6 md:mt-0 md:h-28 flex-col w-full text-sm">
                                     <div className="p-3 pt-1">
-                                        <CardTitle className="text-lg">Datos del paciente</CardTitle>
+                                        <CardTitle className="text-lg">Datos de la persona</CardTitle>
                                         <div className="gap-2 flex">
                                             <BookOpen size='20px' />
                                             <p>Diagnostico: {item.diagnostico}</p>
@@ -114,7 +114,6 @@ export default async function TrabajosPage() {
                                 <Separator orientation="vertical" className="hidden" />
                             </CardContent>
                         </Card>
-                        {/* <div className="absolute z-[27] ml-[400px] md:mt-58 mt-[400px] h-[200px] blur-3xl antialiased bg-gradient-to-br from-sky-600 via-blue-600 to-neutral-500 w-[50%] m-auto rounded-lg"></div> */}
                     </React.Fragment>
                 ))
             )}

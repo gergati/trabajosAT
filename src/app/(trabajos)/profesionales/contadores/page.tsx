@@ -1,8 +1,14 @@
+import { ProfileProfessional } from "../ui/ProfileProfessional";
 
 export default function ContadoresPage() {
   return (
     <div>
-      <h1>Hello Page</h1>
+      <ProfileProfessional />
+      <ProfileProfessional />
+      <ProfileProfessional />
+      <ProfileProfessional />
+      <ProfileProfessional />
+      <ProfileProfessional />
     </div>
   );
 }
