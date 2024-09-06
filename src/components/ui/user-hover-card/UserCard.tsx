@@ -27,7 +27,7 @@ export const UserCard = ({ name, email, image }: Props) => {
         <HoverCard>
             <HoverCardTrigger asChild>
                 <a className="dark:text-white cursor-pointer">
-                    <span className="underline text-xs">
+                    <span className="underline text-xs font-semibold text-gray-600">
                         {name}
                     </span>
                 </a>

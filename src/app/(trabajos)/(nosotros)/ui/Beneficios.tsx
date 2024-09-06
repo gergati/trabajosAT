@@ -49,7 +49,7 @@ export const Beneficios = () => {
                         </div>
                     </Card>
 
-                    <Card className='absolute top-[460px] md:left-[500px] md:top-[380px] md:w-[400px] h-[100px] flex shadow-lg'>
+                    <Card className='absolute top-[460px] md:left-[500px] md:top-[380px] md:w-[400px] h-[120px] flex shadow-lg'>
                         <div className='items-center text-center w-[20%] m-auto ml-4'>
                             <Comunnity />
                         </div>
@@ -60,13 +60,13 @@ export const Beneficios = () => {
                         </div>
                     </Card>
 
-                    <Card className='absolute top-[580px] md:left-[30px] md:top-[270px] md:w-[400px] md:h-[100px] h-[150px] flex shadow-lg'>
+                    <Card className='absolute top-[600px] md:left-[30px] md:top-[270px] md:w-[400px] md:h-[100px] h-[120px] flex shadow-lg'>
                         <div className='items-center text-center w-[20%] m-auto ml-4'>
                             <ArrowRotate />
                         </div>
                         <Separator orientation='vertical' />
                         <div className='w-full items-start m-auto text-start ml-2'>
-                            <CardTitle className='text-lg'>Olvidate de actualizar la busqueda.</CardTitle>
+                            <CardTitle className='text-lg leading-4'>Olvidate de actualizar la busqueda.</CardTitle>
                             <p className='text-sm leading-4'>Con nosotros tu busqueda queda activa, hasta que consigas un profesional o lo borres.</p>
                         </div>
                     </Card>

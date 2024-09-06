@@ -41,7 +41,7 @@ export const Header = () => {
                     </Button>
                 </Link>
                 <Link href={'/auth/new-account'}>
-                    <Button variant={'ghost'} className="border  hover:text-[#003791] hover:bg-transparent hover:border-[#003791] hover:scale-105 hover:transition-all">
+                    <Button variant={'ghost'} className="border hover:text-[#003791] hover:bg-transparent hover:border-[#003791] hover:scale-105 hover:transition-all">
                         <span>Crear cuenta</span>
                         <ChevronRight className="size-5" />
                     </Button>

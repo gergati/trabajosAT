@@ -60,7 +60,7 @@ export const Mision = () => {
                             </Card>
                         </div>
                     </div>
-                    <p className="text-xs md:text-sm text-red-600 ml-3 md:ml-0 mt-3 md:mt-3">* En el acompañamiento terapéutico no existe las generalidades ni objetivos que se puedan aplicar a todo el mundo.</p>
+                    <p className="text-xs md:text-sm text-red-600 ml-3 md:ml-0 mt-3 md:mt-3">* En el acompañamiento terapéutico no existen las generalidades ni objetivos que se puedan aplicar a todo el mundo.</p>
                 </Card>
             </div>
         </div>
